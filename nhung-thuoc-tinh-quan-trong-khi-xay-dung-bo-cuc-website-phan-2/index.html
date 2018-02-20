@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          Những thuộc tính quan trọng khi xây dựng bố cục website - Phần 2 - BlogK - Share what I know
+        
+    </title>
+
+    <link rel="canonical" href="http://blogk.xyz/nhung-thuoc-tinh-quan-trong-khi-xay-dung-bo-cuc-website-phan-2/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('/img/blog-bg.jpg')
+            /*post*/
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                        </div>
+                        <h1>Những thuộc tính quan trọng khi xây dựng bố cục website - Phần 2</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by BlogK on
+                            2015-07-25
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">BlogK</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/nhat-ky-tap-ta/">Nhật ký tập tạ!</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/nhung-nguoi-dong-gop/">Những người đóng góp</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/toi-la-nguyen-tien-minh/">Tôi là Nguyễn Tiến Minh</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/toi-la-tu/">Tôi là Tú</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p>Để tiếp tục <a href="http://blogk.xyz/nhung-thuoc-tinh-quan-trong-khi-xay-dung-bo-cuc-website-phan-1/">bài trước</a> mình xin được giới thiệu tiếp 1 phần cực kì quan trọng và cũng phức tạp không kém.</p>
+<h3><span id="1-position">1. Position</span></h3>
+<p><strong>position</strong> là 1 thuộc tính giúp ta sắp đặt vị trí cho phần tử mà ta muốn. Chúng ta sẽ đi qua từng giá trị của nó.<a id="more"></a></p>
+<h4><span id="static">static</span></h4>
+<p><strong>static</strong> là giá trị mặc định (không cần set cũng có). Vị trí của phần tử được sắp xếp như bình thường, có nghĩa là nó sẽ sắp xếp theo thứ tự, như kiểu từ trên xuống dưới, từ trái sang phải.</p>
+<h4><span id="relative">relative</span></h4>
+<p><strong>relative</strong> nó lấy vị trí mặc định của nó (vị trí của static) làm mốc từ đó ta sẽ dùng các thuộc tính thêm là: top, right, bottom và left để thay đổi khỏi vị trí mặc định đó. Nếu không có các thuộc tính phụ nhu top, right, bottom hay left thì giá trị relative giống như static. Cùng xem ví dụ nhé!</p>
+<script src="https://gist.github.com/tutv95/f89fbc91efadf4ee172d992c9ac973e1.js"></script>
+<p><img src="../media/relative_1.png" alt="relative_1"><br>
+Như ta thấy ở class relative2 đã sử dụng position:relative nhưng chẳng có gì xảy ra khác thường.</p>
+<p>Nhưng nếu ta thêm chút nữa:</p>
+<script src="https://gist.github.com/tutv95/976a4ae6db2e8177afa75002ee8f81d7.js"></script>
+<p><img src="../media/relative_2.png" alt="relative_2"><br>
+Đó :] Nó đã dịch chuyển lên 20px và sang phải 20px so với vị trí mặc định của nó.</p>
+<h4><span id="fixed">fixed</span></h4>
+<p><strong>fixed</strong> sẽ dựa vào của sổ màn hình của trình duyệt để định vị cho phần tử. Giống như relative, nó cũng có 4 thuộc tính phụ là top, right, bottom và left và có cùng cách sử dụng.</p>
+<p>Thường những phần tử có thuộc tính fixed thường đi kèm thêm thuộc tính z-index và có giá trị lớn để nó luôn nằm bên trên các phần tử khác.</p>
+<h4><span id="absolute">absolute</span></h4>
+<p><strong>absolute</strong> là 1 giá trị phức tạp nhất. absolute nó cũng tương tự thằng fixed nhưng thay vì nó định vị vào của cửa sổ của màn hình trình duyệt thì nó sử dụng phần tử của cha, của cụ nó mà có thuộc tính position:relative làm mốc. Nó sẽ bắt đầu tìm từ thằng cha của nó có thuộc tính position:relative xem có không, nếu không có nó sẽ tiếp tục tìm đến ông, cụ, kị,… Nếu tất cả tổ tiên nhà nó không có thì nó sẽ nhận chúa trời (body) làm mốc, thằng body sẽ là tổ tiên to nhất cho mọi phần tử muốn có cha =))</p>
+<script src="https://gist.github.com/tutv95/bf41fcdb7f821dfc04263577bf03d579.js"></script>
+<p><img src="../media/absolute_.png" alt="absolute_"><br>
+Bạn nhớ rằng là ở ví dụ này thì thằng có class là <strong>relative</strong> là cha của thằng có class <strong>absolute</strong> nhé. right:0; -&gt; Căn sát sang bên phải, top:120px; -&gt; Dịch xuống dưới 120px.</p>
+<p>Bạn có thể xem thêm ví dụ tổng quan của nó: <a href="http://learnlayout.com/position-example.html" target="_blank" rel="external">Position example</a>.</p>
+<h3><span id="2-float">2. Float</span></h3>
+<p>Một thuộc tính cũng được sử dụng rất nhiều đó là float. Thuộc tính này giúp thả trôi, mình cũng khó giải thích nên vào ví dụ sẽ dễ hiểu hơn. Ví dụ đây là 1 trường hợp chữ bao quan hình ảnh.<br>
+Đầu tiên là code html(chỉ lấy phần trong body thôi nhé).</p>
+<script src="https://gist.github.com/tutv95/c18dd2fdd6edcc52e8028bbfbd5ad9c7.js"></script>
+<p>Tiếp theo là CSS:</p>
+<script src="https://gist.github.com/tutv95/bdaac83ce5171da50d4bc2711b4c0aa5.js"></script>
+<p>Và đây là kết quả:<br>
+<img src="../media/float.png" alt="float"></p>
+<p>Có còn hay để sử dụng để chia cột, thay thế cho việc sử dụng table của ngày xưa.</p>
+<h3><span id="3-clear">3. Clear</span></h3>
+<p>Thuộc tính clear cực kì quan trọng để kiểm soát hành vi của float. Nó có giá trị nào nó sẽ dừng lại việc trôi nổi của thuộc tính float. Nếu <span style="color:#E20461">clear: left;</span> nó xóa bỏ left, tương tự với right còn nếu là both thì nó xóa bỏ cả hai.</p>
+<p>Chúng ta sẽ cùng xem 2 ví dụ dưới đây.</p>
+<script src="https://gist.github.com/tutv95/15a1b230ef5b9d4847819a581073de92.js"></script>
+<script src="https://gist.github.com/tutv95/f8029b87962df1802896fec868d8810b.js"></script>
+<p><img src="../media/clear_1.png" alt="clear_1"><br>
+Như bạn biết phần tử section ở sau thẻ div và mặc định nó bắt đầu ở dòng mới, nhưng chuyện gì đã xảy ra khi div đặt float là left: đoạn văn bản trong section lấp quoanh box và section lại bao cả box.</p>
+<p>Nhưng nếu thêm class vào section là after-box và thay bằng css sau:</p>
+<script src="https://gist.github.com/tutv95/304fb113c0287877e051b20e49324989.js"></script>
+<p><img src="../media/clear_2.png" alt="clear_2"><br>
+Khi thêm <span style="color:#E20461">clear:left;</span> thì nó đã xóa bỏ ảnh hưởng của float.</p>
+<h3><span id="4-the-clearfix-hack">4. The clearfix hack</span></h3>
+<p>Bạn sẽ thỉnh thoảng gặp trường hơp hơi kì dị và xấu xí khi sử dụng float. Chúng ta cùng xem lại ví dụ ở phần float và xóa còn rất ít chữ.<br>
+<img src="../media/clearfix_hack.png" alt="clearfix_hack"><br>
+Oặc! Ảnh nó lại cao hơn đoạn văn bản kia dẫn đến bố cục rất xấu. Nhưng chúng ta đã có cách xử lý sau:</p>
+<script src="https://gist.github.com/tutv95/e8c871618f0b96faeac0b873f014801f.js"></script>
+<p>Và xem lại kết quả:<br>
+<img src="../media/clearfix_hack_1.png" alt="clearfix_hack_1"></p>
+<p>Thuộc tính này đều được hỗ trợ trên các trình duyệt mới. Còn nếu bạn muốn chạy đúng như ý muốn trên IE6 thì bạn hãy làm theo cách sau:</p>
+<script src="https://gist.github.com/tutv95/4d3063bc4ba2ecb49688c6afbe088afa.js"></script>
+<h3><span id="5percent-width">5.Percent width</span></h3>
+<p>Đơn vị phần trăm cực kì quan trọng trong việc tạo <strong>responsive cho webiste</strong>. Nó là đơn vị đo lường dựa trên phần tử chứa nó. Nó vô cùng hoàn hảo cho ảnh.</p>
+<script src="https://gist.github.com/tutv95/108c82568e70cd3b866da678633f9187.js"></script>
+<p><img src="../media/percent-width.png" alt="percent-width"><br>
+Bạn cũng có thể sử dụng thêm các thuộc tính min-width hay max-width để hạn chế cho những màn hình quá to hoặc nhỏ.</p>
+<p>Thử với 1 ví dụ nữa với các phẩn tử khác để xây dựng bố cục website:</p>
+<script src="https://gist.github.com/tutv95/6f8df6767f7dc79817d6b7b96b0da690.js"></script>
+<p>Và đây là kết quả:<br>
+<img src="../media/percent-width-layout.png" alt="percent-width-layout"></p>
+<h3><span id="6media-queries">6.Media queries</span></h3>
+<p>“<strong>Responsive desgin</strong>” là tạo ra website có thể phù hợp với mọi thiết bị, mọi kích cỡ màn hình. Mọi người có thể duyệt website đó, đọc nội dung của website đó mà không cần phải thanh cuộn ngang hay phải phóng to vì nó quả nhỏ. Điều này khá tuyệt vời đúng không nào!</p>
+<p>Để làm được điều này ta phải sử dụng đến <strong>media queries</strong>. Cách sử dụng bạn có thể xem ví dụ dưới đây:</p>
+<script src="https://gist.github.com/tutv95/cef02a2fa7af5588c2a5a7cffe2f48e3.js"></script>
+<p>Bạn có thể xem <a href="http://learnlayout.com/media-queries.html" target="_blank" rel="external">demo</a>.</p>
+<p>Để biết thêm về media queries bạn tham khảo thêm <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries" target="_blank" rel="external">Media queries</a>.</p>
+<p>Thêm: Để tạo responsive tốt trên điện thoại thì bạn nên thêm meta viewport. Ví dụ như sau:</p>
+<script src="https://gist.github.com/tutv95/6d46a722370b4260dbe48aac942712c5.js"></script>
+<h3><span id="7-inline-block">7. Inline-block</span></h3>
+<p>Bình thường để tạo được các hệ thống lưới (grid system) ta sẽ nghĩ ngay đến <strong>float</strong>, nhưng với inline-block thì dễ hơn nhiều. <strong>inline-block</strong> nó được ghép lại của <span style="color:#E20461">inline</span> và <span style="color:#E20461">block</span>. Có nghĩa là như thế nào? Nó vẫn là 1 block nhưng nó không chiếm hết chiều dài có thể có và bắt đầu ở dòng mới như block bình thường nữa mà nó sẽ chỉ chiếm đúng chiều dài hiện có của nó và bắt đầu ở ngay chỗ kết thúc của phần tử trước (trừ khi phần còn lại của hàng hiện có nhỏ quá nó mới bắt đầu sang hàng mới).</p>
+<p>Nói có vẻ dài nên vào ví dụ cho dễ hiểu nhỉ :]</p>
+<script src="https://gist.github.com/tutv95/433364e38d829494513bbb03e4db2734.js"></script>
+<p><img src="../media/inline-block.png" alt="inline-block"><br>
+Dễ như trò xếp hình của trẻ con nhỉ =)) Chẳng cần lo nghĩ gì, chẳng sợ ảnh hưởng đến bố con thằng nào.</p>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/dong-bo-du-lieu-tu-git-toi-server/" data-toggle="tooltip" data-placement="top" title="Đồng bộ dữ liệu từ git tới server">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/nhung-thuoc-tinh-quan-trong-khi-xay-dung-bo-cuc-website-phan-1/" data-toggle="tooltip" data-placement="top" title="Những thuộc tính quan trọng khi xây dựng bố cục website - Phần 1">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                    <div class="comment">
+                        <div id="disqus_thread" class="disqus-thread"></div>
+                    </div>
+                
+                <!-- disqus comment end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">1. Position</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">static</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">relative</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">fixed</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">absolute</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">2. Float</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">3. Clear</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">4. The clearfix hack</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">5.Percent width</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">6.Media queries</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">7. Inline-block</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<!-- disqus embedded js code start (one page only need to embed once) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "blogkxyz";
+    var disqus_identifier = "http://blogk.xyz/nhung-thuoc-tinh-quan-trong-khi-xay-dung-bo-cuc-website-phan-2/";
+    var disqus_url = "http://blogk.xyz/nhung-thuoc-tinh-quan-trong-khi-xay-dung-bo-cuc-website-phan-2/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus embedded js code start end -->
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/tutv95">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/tutv95">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/tutv">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://www.linkedin.com/in/tutv95">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; BlogK 2018
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://blogk.xyz/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-60224927-2';
+    var _gaDomain = 'blogk.xyz';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+
+</body>
+
+</html>

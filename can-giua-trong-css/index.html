@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          Căn giữa trong CSS - BlogK - Share what I know
+        
+    </title>
+
+    <link rel="canonical" href="http://blogk.xyz/can-giua-trong-css/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('/img/blog-bg.jpg')
+            /*post*/
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#css" title="css">css</a>
+                            
+                              <a class="tag" href="/tags/#centering" title="centering">centering</a>
+                            
+                        </div>
+                        <h1>Căn giữa trong CSS</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by BlogK on
+                            2016-05-21
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">BlogK</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/nhat-ky-tap-ta/">Nhật ký tập tạ!</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/nhung-nguoi-dong-gop/">Những người đóng góp</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/toi-la-nguyen-tien-minh/">Tôi là Nguyễn Tiến Minh</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/toi-la-tu/">Tôi là Tú</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p>Hôm nay đổi gió chút, hôm nay chúng ta sẽ tìm hiểu 1 vấn đề khá quen thuộc trong <a href="http://blogk.xyz/nhung-thuoc-tinh-quan-trong-khi-xay-dung-bo-cuc-website-phan-1/">CSS</a>, tưởng dễ mà không dễ tưởng khó mà cũng chả khó:</p>
+<p><img src="../media/centering___-1.jpg" alt="Các kiểu căn giữa trong CSS"></p>
+<p><strong>Các kiểu căn giữa trong CSS</strong></p>
+<a id="more"></a>
+<p>Có khá nhiều cách để <strong>căn giữa</strong>, tùy thuộc và những trường hợp cụ thể như theo <strong>chiều ngang hay theo chiều dọc</strong> ta sẽ nên lựa chọn các cách phù hợp nhất. Âu cơ, ta sẽ đi vào từng trường hợp cụ thể!<!--more--></p>
+<h2><span id="1-theo-chiều-ngang">1. Theo chiều ngang</span></h2>
+<h3><span id="a-nếu-nó-thuộc-kiểu-inline-hoặc-inline-ví-dụ-như-text-link-paragraph">a. Nếu nó thuộc kiểu inline hoặc inline-* (ví dụ như text, link, paragraph):</span></h3>
+<p>Ở trong 1 phần tử cha kiểu block ta chỉ cần style như sau:</p>
+<script src="https://gist.github.com/tutv95/8dddb24dfc229cd446904d71d0d66292.js"></script>
+<p>Ví dụ:</p>
+<p>See the Pen <a href="http://codepen.io/blogk/pen/eZwwGd/" target="_blank" rel="external">Centering Inline Elements - BlogK</a> by BlogK (<a href="http://codepen.io/blogk" target="_blank" rel="external">@blogk</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+<h3><span id="b-kiểu-thứ-hai-là-một-phần-tử-kiểu-khối-block-thì-sao">b. Kiểu thứ hai là một phần tử kiểu khối block thì sao?</span></h3>
+<p>Để căn giữa ta để <strong>margin-left</strong> và <kbd>margin-right</kbd> là auto, nó sẽ tự căn đều margin hai bên. Và tất nhiên phần tử đó phải có chiều ngang cụ thể và nhỏ hơn thằng cha của nó còn nếu mà nó <strong>full width</strong> thì căn giữa làm méo gì nữa.</p>
+<script src="https://gist.github.com/tutv95/68cf5e4f7022cbe59a3992506f73a559.js"></script>
+<ul>
+<li>Ví dụ:</li>
+</ul>
+<p>See the Pen <a href="http://codepen.io/blogk/pen/mPZZpQ/" target="_blank" rel="external">Centering Single Block Level Element</a> by BlogK (<a href="http://codepen.io/blogk" target="_blank" rel="external">@blogk</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+<p>Đôi khi bạn sẽ không hiểu tại sao bạn đã làm như trên rồi mà sao nó vẫn không căn giữa thì hãy chú ý 1 điều rằng <strong>cách này sẽ không sử dụng được cho các phần tử đã bị float</strong>.</p>
+<h3><span id="c-khó-hơn-1-chút-căn-giữa-cho-nhiều-phần-tử-kiểu-khối-block">c. Khó hơn 1 chút - Căn giữa cho nhiều phần tử kiểu khối block</span></h3>
+<ul>
+<li>Nếu bạn có nhiều hơn 1 phần tử block và mỗi phần tử đó nằm trên các hàng (row) riêng biệt thì ta vẫn sử dụng bình thường như 1 phần tử block. Ví dụ:</li>
+</ul>
+<p>See the Pen <a href="http://codepen.io/blogk/pen/pyXXKy/" target="_blank" rel="external">Centering Blocks on Top of Each Other</a> by BlogK (<a href="http://codepen.io/blogk" target="_blank" rel="external">@blogk</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+<ul>
+<li>Nếu bạn có nhiều hơn 1 phần tử block nhưng trong cùng 1 hàng, để căn giữa ta sẽ sử thay đổi kiểu <strong>display</strong> của các phần tử đó sang dạng inline-* để đưa về cách 1 hoặc sử dụng <strong>flex</strong>.</li>
+</ul>
+<p>Bạn có thể xem ví dụ bên dưới:</p>
+<p>See the Pen <a href="http://codepen.io/blogk/pen/qZzzYx/" target="_blank" rel="external">Centering Row of Blocks</a> by BlogK (<a href="http://codepen.io/blogk" target="_blank" rel="external">@blogk</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+<h2><span id="2-theo-chiều-dọc">2. Theo chiều dọc</span></h2>
+<p>Với căn giữa theo chiều dọc thì nó sẽ phức tạp hơn 1 chút nhé. Ở đây ta cũng phân chia ra 2 kiểu là dạng <strong>inline</strong> và dạng <strong>block</strong>.</p>
+<h3><span id="a-nếu-nó-thuộc-kiểu-inline-hoặc-inline-ví-dụ-như-text-link-paragraph">a. Nếu nó thuộc kiểu inline hoặc inline-* (ví dụ như text, link, paragraph):</span></h3>
+<h4><span id="-kiểu-1-dòng-đơn-lẻ">- Kiểu 1 dòng đơn lẻ</span></h4>
+<p>Dễ rồi, ta chỉ cần **padding **trên dưới là xong!</p>
+<script src="https://gist.github.com/tutv95/00c447f6a7d39319b4859735ed34f639.js"></script>
+<p>Ví dụ nhé:</p>
+<p>See the Pen <a href="http://codepen.io/blogk/pen/ZWddjB/" target="_blank" rel="external">Centering text (kinda) with Padding</a> by BlogK (<a href="http://codepen.io/blogk" target="_blank" rel="external">@blogk</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+<p>Vì 1 lý do nào đó mà dùng padding mà vẫn không được và bạn biết chắc là phần tử đó sẽ không xuống dòng bạn có thể sử dụng <strong>line-height</strong> như sau:</p>
+<script src="https://gist.github.com/tutv95/5fe753b2fc4aa97ba4bb1a576dd938d5.js"></script>
+<p>Úm ba la ra kết quả:</p>
+<p>See the Pen <a href="http://codepen.io/blogk/pen/BKggPg/" target="_blank" rel="external">Centering a line with line-height</a> by BlogK (<a href="http://codepen.io/blogk" target="_blank" rel="external">@blogk</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+<h4><span id="-kiểu-nhiều-dòng">- Kiểu nhiều dòng</span></h4>
+<p>Cách bên trên cũng có thể sử dụng cho trường hợp với nhiều dòng, nhưng nếu nó không hoạt động thì có lẽ các phần tử đó đang được hiển thị kiểu <strong>table-cell</strong> rồi. Lúc này thì <a href="https://css-tricks.com/what-is-vertical-align/" target="_blank" rel="external">vertical-align</a> sẽ ra tay cứu giúp.</p>
+<p>Xem ví dụ nhé:</p>
+<p>See the Pen <a href="http://codepen.io/blogk/pen/ONeKKp/" target="_blank" rel="external">Centering text (kinda) with Padding</a> by BlogK (<a href="http://codepen.io/blogk" target="_blank" rel="external">@blogk</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+<p>Nếu mà dùng <strong>table</strong> vẫn không được thì hãy nghĩ đến <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="external">flexbox </a>nhé!</p>
+<script src="https://gist.github.com/tutv95/14ac73daecdafb238203ef9b3da35880.js"></script>
+<p>Hãy xem ví dụ này:</p>
+<p>See the Pen <a href="http://codepen.io/blogk/pen/qZeWWW/" target="_blank" rel="external">Vertical Center Multi Lines of Text with Flexbox</a> by BlogK (<a href="http://codepen.io/blogk" target="_blank" rel="external">@blogk</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+<p>À cách này chỉ phù hợp khi thằng cha của nó phải có 1 <strong>chiều cao định sẵn</strong> rồi nhé!</p>
+<p>Nếu mà vẫn không được nữa thì hãy dùng cách này nhé!</p>
+<script src="https://gist.github.com/tutv95/e18bf3e2e55598a98436c31f2eab29ea.js"></script>
+<p>See the Pen <a href="http://codepen.io/blogk/pen/NNQKWw/" target="_blank" rel="external">Ghost Centering Multi Line Text</a> by BlogK (<a href="http://codepen.io/blogk" target="_blank" rel="external">@blogk</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+<h3><span id="b-kiểu-thứ-hai-là-kiểu-khối-block">b. Kiểu thứ hai là kiểu khối block</span></h3>
+<h4><span id="-bạn-biết-chiều-cao-của-nó">- Bạn biết chiều cao của nó</span></h4>
+<p>Đơn giản rồi, đầu tiên bạn sử dụng** position: absolute;** và đặt <strong>top: 50%;</strong>, tiếp đó bạn dùng <strong>margin (âm) để lùi lên trên bằng 1 nửa chiều cao</strong> của khối đó. Xem code và ví dụ cho dễ hiểu này.</p>
+<script src="https://gist.github.com/tutv95/c2102edaa8e946fafe4802c7e004c57f.js"></script>
+<p>See the Pen <a href="http://codepen.io/blogk/pen/RaXbNR/" target="_blank" rel="external">Center Block with Fixed Height</a> by BlogK (<a href="http://codepen.io/blogk" target="_blank" rel="external">@blogk</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+<h4><span id="-bạn-không-quan-tâm-đến-chiều-cao-của-nó">- Bạn không quan tâm đến chiều cao của nó</span></h4>
+<p>Hơi khó nhưng vẫn giải quyết được, bạn làm y như bước đầu tiên của cách trên, nhưng ta không biết chiều cao của khối đó nên ta sẽ sử dụng 1 chiêu khác đó là <strong>transform: translateY(-50%)</strong></p>
+<script src="https://gist.github.com/tutv95/4f05c093da9f336f863c3d8919d67fdd.js"></script>
+<p>See the Pen <a href="http://codepen.io/blogk/pen/QNeLwQ/" target="_blank" rel="external">Center Block with Unknown Height</a> by BlogK (<a href="http://codepen.io/blogk" target="_blank" rel="external">@blogk</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+<h4><span id="-bạn-có-thể-sử-dụng-flexbox-không">- Bạn có thể sử dụng flexbox không?</span></h4>
+<p>Với flexbox điều này vô cùng đơn giản.</p>
+<script src="https://gist.github.com/tutv95/be4748ec524a36e787ab91abb16121ab.js"></script>
+<p>See the Pen <a href="http://codepen.io/blogk/pen/EKqYaz/" target="_blank" rel="external">Center Block with Unknown Height with Flexbox</a> by BlogK (<a href="http://codepen.io/blogk" target="_blank" rel="external">@blogk</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+<h2><span id="3-theo-cả-hai-chiều">3. Theo cả hai chiều</span></h2>
+<p>Với trường hợp này ta có thể kết hợp lại của 2 trường hợp trên sao cho phù hợp. Căn giữa theo cả hai chiều sẽ <strong>tập trung vào việc căn theo chiều dọc</strong> vì theo chiều ngang có khá nhiều cách và dễ dàng thực hiện. Do bài dài vãi lúa nên mình sẽ không đi vào chi tiết nhưng mình sẽ liệt kê các cách chính là:</p>
+<ul>
+<li>Sử dụng position: absolute; để căn giữa và margin ngược trở lại.</li>
+<li>Sử dụng transform: translate(-50%, -50%); để lùi lại khi không biết chiều cao hoặc chiều rộng.</li>
+<li>Sử dụng flexbox.</li>
+</ul>
+<h2><span id="4-kết-luận">4. Kết luận</span></h2>
+<p>Hầu hết các cách căn giữa ở đây đều khá cơ bản và dễ dàng thực hiện, khi các cách đơn giản không thể chạy được người ta thường nghĩ đến <strong>flexbox</strong> là vị cứu tinh cuối cùng. Flexbox rất vi diệu, nhưng nó cũng khá mới nên chưa được hỗ trợ (hoặc hỗ trợ không đầy đủ) ở một trình duyệt nên nó chưa được sử dụng phổ biến.</p>
+<p>Mệt value! Hết rồi đó, hãy thực hành ngay để có thể cảm nhận và nhớ lâu hơn nhé! Vẫn không thế nhớ à? Vậy búc mác lại nhé :)</p>
+<p>Bài viết được dịch từ: <a href="https://css-tricks.com/centering-css-complete-guide/" target="_blank" rel="external">https://css-tricks.com/centering-css-complete-guide/</a></p>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/xem-thoi-tiet-bang-dong-lenh-command-line/" data-toggle="tooltip" data-placement="top" title="Xem thời tiết bằng dòng lệnh (Command Line)">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/lan-dau-trai-nghiem-nodejs/" data-toggle="tooltip" data-placement="top" title="Lần đầu trải nghiệm Node.js">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                    <div class="comment">
+                        <div id="disqus_thread" class="disqus-thread"></div>
+                    </div>
+                
+                <!-- disqus comment end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">1. Theo chiều ngang</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">a. Nếu nó thuộc kiểu inline hoặc inline-* (ví dụ như text, link, paragraph):</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">b. Kiểu thứ hai là một phần tử kiểu khối block thì sao?</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">c. Khó hơn 1 chút - Căn giữa cho nhiều phần tử kiểu khối block</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">2. Theo chiều dọc</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">a. Nếu nó thuộc kiểu inline hoặc inline-* (ví dụ như text, link, paragraph):</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">2.1.1.</span> <span class="toc-nav-text">- Kiểu 1 dòng đơn lẻ</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">2.1.2.</span> <span class="toc-nav-text">- Kiểu nhiều dòng</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">b. Kiểu thứ hai là kiểu khối block</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">2.2.1.</span> <span class="toc-nav-text">- Bạn biết chiều cao của nó</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">2.2.2.</span> <span class="toc-nav-text">- Bạn không quan tâm đến chiều cao của nó</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">2.2.3.</span> <span class="toc-nav-text">- Bạn có thể sử dụng flexbox không?</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">3. Theo cả hai chiều</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">4. Kết luận</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#css" title="css">css</a>
+                        
+                          <a class="tag" href="/tags/#centering" title="centering">centering</a>
+                        
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<!-- disqus embedded js code start (one page only need to embed once) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "blogkxyz";
+    var disqus_identifier = "http://blogk.xyz/can-giua-trong-css/";
+    var disqus_url = "http://blogk.xyz/can-giua-trong-css/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus embedded js code start end -->
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/tutv95">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/tutv95">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/tutv">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://www.linkedin.com/in/tutv95">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; BlogK 2018
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://blogk.xyz/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-60224927-2';
+    var _gaDomain = 'blogk.xyz';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+
+</body>
+
+</html>

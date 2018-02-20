@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          Bạn đã thực sự hiểu rõ String chưa? - BlogK - Share what I know
+        
+    </title>
+
+    <link rel="canonical" href="http://blogk.xyz/ban-da-thuc-su-hieu-ro-string-chua/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('/img/blog-bg.jpg')
+            /*post*/
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#chuỗi" title="chuỗi">chuỗi</a>
+                            
+                              <a class="tag" href="/tags/#phức tạp hóa" title="phức tạp hóa">phức tạp hóa</a>
+                            
+                              <a class="tag" href="/tags/#String" title="String">String</a>
+                            
+                              <a class="tag" href="/tags/#String java" title="String java">String java</a>
+                            
+                              <a class="tag" href="/tags/#String Literal" title="String Literal">String Literal</a>
+                            
+                        </div>
+                        <h1>Bạn đã thực sự hiểu rõ String chưa?</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by Minh on
+                            2016-07-02
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">BlogK</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/nhat-ky-tap-ta/">Nhật ký tập tạ!</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/nhung-nguoi-dong-gop/">Những người đóng góp</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/toi-la-nguyen-tien-minh/">Tôi là Nguyễn Tiến Minh</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/toi-la-tu/">Tôi là Tú</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p>Hồi trước đi làm test của mấy công ti thấy lạ sao họ cho nhiều câu về String thế, thực sự lúc đó tôi chỉ nghĩ <strong>String</strong> thì có đếch gì đâu nhỉ, chỉ là 1 mảng các char + vài hàm phụ thêm thôi chứ có gì đâu, cái cần quan tâm là Thread, là OOP kia kìa… Cho đến một ngày, tôi đã tò mò về nó và tìm hiểu, và mọi suy nghĩ hồi trước của tôi đã thay đổi…</p>
+<p><img src="../media/ropeball.jpg" alt="string la gi"></p>
+<a id="more"></a>
+<hr>
+<p><strong>String</strong>, một cái tên không còn xa lạ đối với tất cả lập trình viên. Chẳng cần nói thì hẳn ai cũng có thể thấy <strong>String</strong> quan trọng với giới lập trình thế nào. Nhờ có <strong>String</strong> mà thế giới mới có thể giao tiếp với nhau, web mới có nội dung, text mới có thể hiển thị, tôi mới có thể viết blog, bạn mới có thể vào blog và xem bài này :D<br>
+…</p>
+<p>Ok<br>
+Vậy ta cùng tìm hiểu kĩ hơn về nó nhé :D<br>
+(À tôi là lập trình viên Java, nên những điều tôi nói ở đây sẽ là <strong>String</strong> trong Java nhé)</p>
+<h2><span id="string-là-gì">String là gì?</span></h2>
+<p><strong>String</strong> là một dãy hoặc một mảng gồm các kí tự. Kí tự cuối cùng là kí tự \0 (NULL trong bảng mã ASCII)</p>
+<p>Thử vọc vào lớp String của JAVa xem có gì nào<br>
+Để ý những dòng đầu tiên lớp <strong>String.java</strong> ta sẽ thấy 2 dòng này:</p>
+<figure class="highlight ocaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">/** <span class="type">The</span> <span class="keyword">value</span> is used <span class="keyword">for</span> character storage. */</div><div class="line"><span class="keyword">private</span> final <span class="built_in">char</span> <span class="keyword">value</span><span class="literal">[]</span>;</div></pre></td></tr></table></figure>
+<p><img src="../media/1.png" alt="1"></p>
+<p>Nếu bạn để ý thêm, bạn sẽ thấy lớp <strong>String</strong> này sử dụng thao tác hầu hết trên mảng value.<br>
+Dạo qua phương thức nổi tiếng này xem sao nhé:</p>
+<p><img src="../media/length.png" alt="length"></p>
+<p>Hàm <strong>length()</strong> là hàm lấy độ dài chuỗi <strong>String</strong> và như code ta thấy hàm này trả về độ dài của mảng value kia.<br>
+Bạn tin tôi rồi chứ, <strong>“String là một mảng các kí tự!”</strong></p>
+<h2><span id="string-hoạt-động-thế-nào">String hoạt động thế nào?</span></h2>
+<p>Cho một ví dụ sau:<br>
+<strong>Hãy dự đoán kết quả in ra màn hình console khi compile and build đoạn chương trình sau:</strong><br>
+(Trước khi đọc đáp án, tôi đề nghị bạn hãy suy nghĩ thật kĩ và đưa ra một câu trả lời cho mình, điều này rất quan trọng!)</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">String </span><span class="built_in">a1</span> = new <span class="keyword">String("a");</span></div><div class="line"><span class="keyword">String </span><span class="keyword">b1 </span>= <span class="string">"a"</span><span class="comment">;</span></div><div class="line"></div><div class="line"><span class="keyword">String </span><span class="built_in">a2</span> = new <span class="keyword">String("a");</span></div><div class="line"><span class="keyword">String </span><span class="keyword">b2 </span>= new <span class="keyword">String("a");</span></div><div class="line"><span class="keyword"></span></div><div class="line"><span class="keyword">String </span><span class="built_in">a3</span> = <span class="string">"a"</span><span class="comment">;</span></div><div class="line"><span class="keyword">String </span><span class="keyword">b3 </span>= <span class="string">"a"</span><span class="comment">;</span></div><div class="line"></div><div class="line"><span class="symbol">System.out.println</span>(<span class="built_in">a1</span> == <span class="keyword">b1);</span></div><div class="line"><span class="keyword">System.out.println(a2 </span>== <span class="keyword">b2);</span></div><div class="line"><span class="keyword">System.out.println(a3 </span>== <span class="keyword">b3);</span></div></pre></td></tr></table></figure>
+<p>Suy nghĩ-ing …</p>
+<p>Và đây là câu trả lời của <strong>JVM</strong></p>
+<p><img src="../media/example.png" alt="example"></p>
+<h3><span id="tại-sao-vậy">Tại sao vậy?</span></h3>
+<p>Bối rối quá! Tại sao kết quả cuối lại là true vậy??<br>
+Chẳng lẽ JVM lại sai @@<br>
+…<br>
+Để biết JVM sai hay không ta cùng mổ xẻ vấn đề nhé!</p>
+<p>Đầu tiên, nói về toán tử == của Java, nó là toán tử dùng để kiểm tra sự tương đương giá trị của 2 biến, nếu 2 biến có giá trị tương đương thì trả về true, ngược lại là false; Nếu 2 biến kiểm tra có kiểu tham chiếu thì phép == kiểm tra 2 biến này có tham chiếu tới cùng một đối tượng trong bộ nhớ không, nếu có thì trả về true, ngược lại là false.</p>
+<p>Tiếp, nói về từ khoá new của Java, nó giúp ta ra lệnh cho JVM (Java Virtual Machine) tạo một đối tượng mới “hoàn toàn” trong không gian nhớ.<br>
+Ví dụ: <strong>String a = new String(“abc”)</strong> sẽ kiểu kiểu như: “Ê JVM, tạo cho ta một thằng String mới tên là a có giá trị là “abc” nhé, nhớ là thằng này phải còn “zin” đấy nhé!”</p>
+<p>2 khái niệm này có gợi cho bạn thông điệp nào không? Thử đoán xem!</p>
+<h3><span id="khám-phá">Khám phá</span></h3>
+<p>Ok, từ 2 điều trên ta rút ra được 1 điều quan trọng là: cặp <strong>a1, b1</strong> và cặp <strong>a2, b2</strong> không cùng tham chiếu tới một đối tượng, nhưng cặp <strong>a3, b3</strong> lại có!</p>
+<p><strong>Nghịch lí nhỉ?</strong></p>
+<h2><span id="string-literal-amp-string-pool">String Literal &amp; String Pool</span></h2>
+<p>Để trả lời thắc mắc trên, chúng ta cần tìm hiểu tới một khái niệm gọi là <strong>String Pool</strong> và <strong>String Literal</strong><br>
+Khi bạn khởi tạo một biến String với chuỗi nằm trong dấu ngoặc kép &quot; &quot; (ví dụ: String s = “heloo”) tức là bạn đang khởi tạo một đối tượng String Literal và đối tượng String này được cất giữ ở trong một vùng nhớ đặc biệt gọi là String Pool. Mỗi khi bạn khởi tạo một String Literal tiếp theo, JVM sẽ kiểm tra String Pool; nếu chuỗi đã tồn tại trong Pool, một tham chiếu tới String Literal tương ứng được trả về, nếu không JVM sẽ khởi tạo một đối tượng String mới và đặt nó vào trong Pool<br>
+Việc không tạo đối tượng mới mà trả về một tham chiếu tới một đối tượng có cùng giá trị là điều khác nhau cơ bản giữa việc sử dụng <strong>String Literal</strong> và từ khoá <strong>new</strong></p>
+<h4><span id="tại-sao-là-string-literal">Tại sao là String Literal?</span></h4>
+<p><strong>String Literal</strong> khiến việc quản lí bộ nhớ của JVM được hiệu quả hơn</p>
+<h3><span id="giá-trị-của-một-đối-tượng-string-không-bao-giờ-thay-đổi">Giá trị của một đối tượng String không bao giờ thay đổi!</span></h3>
+<p>Tất cả các hàm sử lí chuỗi có sẵn của lớp <strong>String</strong> đều trả về một đối tượng <strong>String</strong> mới và không làm thay đổi giá trị của <strong>String</strong> đã cho</p>
+<p>Tiếp một ví dụ nữa nhé :D<br>
+Hãy dự đoán kết quả sau khi compile and run đoạn mã sau:</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) &#123;</div><div class="line">    <span class="keyword">String</span> temp = <span class="string">"BlogK.xyz"</span>;</div><div class="line"></div><div class="line">    temp.toLowerCase();</div><div class="line">    System.out.<span class="built_in">println</span>(temp);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Kết quả:</p>
+<p><img src="../media/2.png" alt="2"></p>
+<p>Tuy được gọi hàm <strong>toLowerCase()</strong> nhưng đối tượng <strong>String</strong> vẫn không thay đổi giá trị. Nếu muốn một kết quả như mong đợi, hãy dùng một tham chiếu khác để hứng kết quả này (hoặc dùng chính tham chiếu cũ nếu bạn không muốn tạo thêm biến mới)<br>
+Sửa lại một chút và chạy sẽ ra kết quả như mong đợi:</p>
+<p><img src="../media/3.png" alt="3"></p>
+<h3><span id="dạo-qua-những-hàm-xử-lí-string-cơ-bản">Dạo qua những hàm xử lí String cơ bản</span></h3>
+<p>Cho chuỗi ban đầu: <strong>String s = “BlogK.xyz”</strong></p>
+<p><strong>concat(String anotherString)</strong>:<br>
+Hàm nối String. Trả về một String mới có giá trị là: s + anotherString<br>
+Ví dụ: kết quả của <strong>s.concat(“1234”)</strong> là <strong>“BlogK.xyz1234”</strong></p>
+<p><strong>replace(String oldString, String newString)</strong>:<br>
+Hàm thay thế những chuỗi con bằng một chuỗi mới<br>
+Ví dụ: kết quả của <strong>s.replace(“xyz”, “abc”)</strong> là <strong>“BlogK.abc”</strong></p>
+<p><strong>equals(String anotherString)</strong><br>
+Hàm so sánh 2 chuỗi có phải 2 chuỗi giống nhau không, nếu 2 chuỗi giống nhau trả về TRUE, nếu không giống nhau trả về FALSE<br>
+Ví dụ: <strong>s.equals(“blogk.xyz”)</strong> trả về <strong>false</strong><br>
+Nếu bạn muốn kiểm tra 2 chuỗi giống nhau không phân biệt hoa thường thì hãy dùng hàm này: <strong>equalsIgnoreCase()</strong>. Ví dụ vẫn sử dụng đầu vào của ví dụ trên nhưng ta sử dụng hàm mới: <strong>s.equalsIgnoreCase(“blogk.xyz”)</strong> trả về <strong>TRUE</strong></p>
+<p><strong>charAt(int index)</strong><br>
+Hàm trả về kí tự tại một vị trí nào đó (vị trí index được truyền vào)</p>
+<p><strong>trim()</strong>:<br>
+Hàm cắt bỏ khoảng trống thừa<br>
+Ví dụ: cho chuỗi <strong>tempString = &quot; blogk.xyz &quot;</strong>. <strong>tempString.trim()</strong> trả về một chuỗi mới có giá trị là <strong>“blogk.xyz”</strong></p>
+<p><strong>codePointAt(int index)</strong><br>
+Hàm lấy mã ASCII của một kí tự tại vị trí nào đó (vị trí index được truyền vào)<br>
+Ví dụ: <strong>s.codePointAt(0)</strong> trả về <strong>66</strong> (mã ASCII của ‘B’ là 66)</p>
+<p><strong>contains(String anotherString)</strong>:<br>
+Hàm kiểm tra một chuỗi có tồn tại trong chuỗi đã cho hay không, Nếu tồn tại trả về TRUE, nếu không trả về FALSE<br>
+Ví dụ: <strong>s.contains(“K.xy”)</strong> trả về <strong>TRUE</strong></p>
+<p><strong>length()</strong>:<br>
+Hàm lấy độ dài chuỗi</p>
+<h2><span id="lời-kết">Lời kết:</span></h2>
+<p>Phù. Bài viết cũng khá dài đấy chứ. Cám ơn bạn vì đã nghe tôi nói tới tận dòng này :D<br>
+String thực sự có khá nhiều điều hay ho mà khi tìm hiểu làm ta cảm thấy rất thích thú. Qua bài này tôi chỉ muốn bạn chú ý đến 2 điều mà theo tôi là quan trọng nhất:</p>
+<ul>
+<li>Khái niệm String Literal</li>
+<li>String trong Java là không thể thay đổi (immutable)</li>
+</ul>
+<p>Trong bài tiếp theo tôi sẽ nói về String buffer &amp; String builder.</p>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/gitignore-la-gi-no-co-quan-trong-khong/" data-toggle="tooltip" data-placement="top" title="Gitignore là gì? Nó có quan trọng không?">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/su-dung-gulp-de-viet-sass-hieu-qua/" data-toggle="tooltip" data-placement="top" title="Sử dụng Gulp để viết Sass hiệu quả">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                    <div class="comment">
+                        <div id="disqus_thread" class="disqus-thread"></div>
+                    </div>
+                
+                <!-- disqus comment end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">String là gì?</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">String hoạt động thế nào?</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">Tại sao vậy?</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">Khám phá</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">String Literal & String Pool</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">3.0.1.</span> <span class="toc-nav-text">Tại sao là String Literal?</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">Giá trị của một đối tượng String không bao giờ thay đổi!</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">Dạo qua những hàm xử lí String cơ bản</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">Lời kết:</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#chuỗi" title="chuỗi">chuỗi</a>
+                        
+                          <a class="tag" href="/tags/#phức tạp hóa" title="phức tạp hóa">phức tạp hóa</a>
+                        
+                          <a class="tag" href="/tags/#String" title="String">String</a>
+                        
+                          <a class="tag" href="/tags/#String java" title="String java">String java</a>
+                        
+                          <a class="tag" href="/tags/#String Literal" title="String Literal">String Literal</a>
+                        
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<!-- disqus embedded js code start (one page only need to embed once) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "blogkxyz";
+    var disqus_identifier = "http://blogk.xyz/ban-da-thuc-su-hieu-ro-string-chua/";
+    var disqus_url = "http://blogk.xyz/ban-da-thuc-su-hieu-ro-string-chua/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus embedded js code start end -->
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/tutv95">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/tutv95">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/tutv">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://www.linkedin.com/in/tutv95">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; BlogK 2018
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://blogk.xyz/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-60224927-2';
+    var _gaDomain = 'blogk.xyz';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+
+</body>
+
+</html>

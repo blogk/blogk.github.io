@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>http://blogk.xyz</loc>
+        <changefreq>daily</changefreq>
+        <priority>1</priority>
+    </url>
+
+    <url>
+        <loc>http://blogk.xyz/web-caching-la-cai-gi/</loc>
+        <lastmod>2018-02-20T16:17:40.245Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blogk.xyz/xem-thoi-tiet-bang-dong-lenh-command-line/</loc>
+        <lastmod>2018-02-20T16:17:40.245Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blogk.xyz/tu-tao-email-hosting-mien-phi/</loc>
+        <lastmod>2018-02-20T16:17:40.244Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blogk.xyz/use-jquery-plugins-with-vue-js/</loc>
+        <lastmod>2018-02-20T16:17:40.244Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blogk.xyz/su-dung-gulp-de-viet-sass-hieu-qua/</loc>
+        <lastmod>2018-02-20T16:17:40.243Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blogk.xyz/tet-khong-ban-phao-hoa-u-chuyen-don-gian-p/</loc>
+        <lastmod>2018-02-20T16:17:40.243Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blogk.xyz/thu-viet-mot-thu-vien-php/</loc>
+        <lastmod>2018-02-20T16:17:40.243Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blogk.xyz/php-memory-limit-wordpress-developer/</loc>
+        <lastmod>2018-02-20T16:17:40.242Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blogk.xyz/socket-io-la-cai-gi-voi/</loc>
+        <lastmod>2018-02-20T16:17:40.242Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blogk.xyz/no-star-where/</loc>
+        <lastmod>2018-02-20T16:17:40.241Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blogk.xyz/note-mot-so-meo-khi-dung-ubuntu/</loc>
+        <lastmod>2018-02-20T16:17:40.241Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blogk.xyz/ngan-mat-troi-ruc-ro/</loc>
+        <lastmod>2018-02-20T16:17:40.240Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blogk.xyz/nhung-thuoc-tinh-quan-trong-khi-xay-dung-bo-cuc-website-phan-1/</loc>
+        <lastmod>2018-02-20T16:17:40.240Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blogk.xyz/nhung-thuoc-tinh-quan-trong-khi-xay-dung-bo-cuc-website-phan-2/</loc>
+        <lastmod>2018-02-20T16:17:40.240Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blogk.xyz/khong-ngu-duoc-ngoi-lan-man/</loc>
+        <lastmod>2018-02-20T16:17:40.239Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blogk.xyz/lan-dau-trai-nghiem-nodejs/</loc>
+        <lastmod>2018-02-20T16:17:40.239Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blogk.xyz/nen-gzip-that-ba-dao/</loc>
+        <lastmod>2018-02-20T16:17:40.239Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blogk.xyz/hack-cloudflare-development-mode/</loc>
+        <lastmod>2018-02-20T16:17:40.238Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blogk.xyz/gitignore-la-gi-no-co-quan-trong-khong/</loc>
+        <lastmod>2018-02-20T16:17:40.238Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blogk.xyz/cho-phep-cai-plugin-trong-java-nhu-the-nao/</loc>
+        <lastmod>2018-02-20T16:17:40.237Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blogk.xyz/dong-bo-du-lieu-tu-git-toi-server/</loc>
+        <lastmod>2018-02-20T16:17:40.237Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blogk.xyz/gioi-thieu-series-hieu-javascript-tu-nhung-dieu-nho-nhat-nhat/</loc>
+        <lastmod>2018-02-20T16:17:40.237Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blogk.xyz/can-giua-trong-css/</loc>
+        <lastmod>2018-02-20T16:17:40.236Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blogk.xyz/chien-binh-cau-vong/</loc>
+        <lastmod>2018-02-20T16:17:40.236Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blogk.xyz/cho-nguoi-noi-ay-nguoi-dang-deactive-facebook/</loc>
+        <lastmod>2018-02-20T16:17:40.236Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blogk.xyz/ban-da-thuc-su-hieu-ro-string-chua/</loc>
+        <lastmod>2018-02-20T16:17:40.235Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://blogk.xyz/cac-front-end-dev-nen-biet-ve-css-specificity/</loc>
+        <lastmod>2018-02-20T16:17:40.235Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+</urlset>
+<!-- XML Sitemap generated by Hexo SEO Friendly Sitemap Generator -->

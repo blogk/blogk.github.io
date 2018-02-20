@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          Cho phép cài plugin trong java như thế nào? - BlogK - Share what I know
+        
+    </title>
+
+    <link rel="canonical" href="http://blogk.xyz/cho-phep-cai-plugin-trong-java-nhu-the-nao/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('/img/blog-bg.jpg')
+            /*post*/
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#java" title="java">java</a>
+                            
+                              <a class="tag" href="/tags/#plugin" title="plugin">plugin</a>
+                            
+                        </div>
+                        <h1>Cho phép cài plugin trong java như thế nào?</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by BlogK on
+                            2016-08-07
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">BlogK</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/nhat-ky-tap-ta/">Nhật ký tập tạ!</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/nhung-nguoi-dong-gop/">Những người đóng góp</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/toi-la-nguyen-tien-minh/">Tôi là Nguyễn Tiến Minh</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/toi-la-tu/">Tôi là Tú</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p>Chả là đang tập tọe làm wordpress plugin, bỗng dưng nảy ra câu hỏi thế cài đặt plugin trong java như thế nào. Trước giờ cũng chỉ làm theo kiểu yêu cầu đến đâu viết đến đấy chứ chưa được làm kiểu plugin này bao giờ cả. Đành hỏi bác Gúc vậy. Sau một hồi đào bới cũng gọi là nắm đưọc đôi phần, note ra đây cho bác nào cùng chung thắc mắc.</p>
+<p><img src="../media/plugin.jpg" alt="plugin"></p>
+<a id="more"></a>
+<h2><span id="plugin-là-khỉ-gì">Plugin là khỉ gì?</span></h2>
+<p>Nói thế chứ plugin chắc không lạ gì rồi, điển hình như các thể loại trình duyệt phổ biến như Chrome, Firefox, Opera kiểu gì mỗi cái chả cài một đống plugin đến khi trình duyệt có gì bất thường lại chả lôi đầu mấy thằng plugin ra kiểm ra đầu tiên. Một cách đơn giản thì Plugin chính là một bộ phần mềm cài đặt để hỗ trợ, mở rộng chức năng cho một phần mềm ứng dụng lớn hơn, dựa trận nhưng giao thức và API do phần mềm lớn cung cấp.</p>
+<h2><span id="plugin-có-gì-hay-ho">Plugin có gì hay ho?</span></h2>
+<p>Kiến trúc plugin thực sự rất tuyệt vời, nó cho phép mở rộng (thập chí là thay đổi) các chức năng của các host applications (tạm gọi là ứng dụng chủ đi), với một thiết kế tốt các ứng dụng có thể cắm thêm bao nhiêu chức năng tùy thích mỗi plugin mang đến một tiện ích dẫn đến khả năng mở rộng của hệ thống là cực kỳ tuyệt vời mình xin phép đưọc nhai lại một lần nữa là phải thiết kế cho tốt nhé không là ứng úng lỗi tùm lum đó.</p>
+<p>Với cộng đồng mã nguồn mở phát triển như vũ bão ngày nay, với một ứng dụng có base tốt và một plugin API tối thì tốc độ phát triển sẽ không thể tin nổi. VD như <a href="https://www.youtube.com/watch?v=B6zVzWU95Sw" target="_blank" rel="external">slack</a> một hệ thống nhắn tin và trao đổi công việc đang rất nổi tuy cũng chỉ mới phát triển được vài năm nhưng số lượng plugin trong kho của slack đã rất khổng lồ hầu hết là do các bên thứ ba phảt triển, thực sự nâng giá trị của ứng dụng ban đầu lên gấp nhiều lần mà một team không thể làm hết được.</p>
+<h2><span id="rồi-thế-cài-đặt-thằng-này-thế-nào">Rồi, thế cài đặt thằng này thế nào?</span></h2>
+<p>Đối với các script language như Javascript, PHP, python… với dặc điểm mỗi lần chạy là một lần <strong>thông dịch</strong> thì có vẻ không gặp trở ngại gì chỉ việc dùng một thằng callback là xong cái này mình sẽ nói đến vào một ngày đẹp trời không xa. Với Java câu chuyện có vẻ không dễ dàng như thế, Java thì khônng có callback hay cái gì tượng tự cả, mình thì gà Java nên cũng thấy vụ này hơi khoai một chút.</p>
+<p><img src="../media/application-architecture.jpg" alt="application-architecture"></p>
+<p>Về cơ bản để có thể cắm được plugin thì ứng dụng phải có kiến trúc đơn giản nhất như trong hình trên, hai thành phần cơ bản đó là <strong>application core</strong> và <strong>plugin manager</strong>:</p>
+<ul>
+<li><strong>application core:</strong> thằng này là ứng dụng chủ có nhiệm bụ bào đảm logic của hệ thống, thực hiện các tác vụ và hook (gọi) các plugin thực hiện nhiệm vụ của mình trong runtime.</li>
+<li><strong>plugins manager:</strong> thằng chịu sự chỉ đạo của thằng core có nhiệm vụ đăng ký các plugin thêm, gỡ, bật, tắt các plugin.</li>
+</ul>
+<p>Để có thể cắm được plugin ta phải có một plugin interface đây là giao diện mà tất cả các plugin sẽ kế thừa, plugin manager sẻ load các plugins và initial (nôm na là tạo ra thực thể của mỗi plugin) vào trong một List các plugins rồi từ đó application core sẽ lần lưọt móc ra từ cái một và bắt nó thực hiện nhiệm vụ nhất định.</p>
+<p>Hì, mình giải thích củ chuối quá chắc ko ai hiểu nổi nhỉ. Để trực quan sinh động mời ae xem ví dụ bên dưới.</p>
+<h2><span id="ví-dụ-trực-quan-nè">Ví dụ trực quan nè</span></h2>
+<p>ở ví dụ này mình sẽ tạo một ứng dụng đơn giẩn với đầu vào là 1 số, các plugin sẽ đưọc thêm vào đê chế biến số đó để đưa ra kết quả cuối cùng cộng trừ nhân chia gì đó.</p>
+<p>Ok, đầu tiên chúng ta phải có một thằng interface chung cho các plugins. tạm gọi là <strong><code>PluginFunction.java</code></strong> đi.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">PluginFunction</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="comment">// let the application pass in a parameter</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setParameter</span> <span class="params">(<span class="keyword">int</span> param)</span></span>;</div><div class="line"></div><div class="line">	<span class="comment">// retrieve a result from the plugin</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getResult</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line">	<span class="comment">// return the name of this plugin</span></div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getPluginName</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line">	<span class="comment">// can be called to determine whether the plugin</span></div><div class="line">	<span class="comment">// aborted execution due to an error condition</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasError</span><span class="params">()</span></span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Tiếp theo ta phải có một cái main để chạy logic của ứng dụng và gọi các plugin, ta gọi là <code>PluginDemo.java</code> chứa hàm main.</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.io.<span class="keyword">File</span>;</div><div class="line"><span class="keyword">import</span> java.util.*;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> PluginDemo &#123;</div><div class="line">	<span class="comment">//parameter for plugins</span></div><div class="line">	<span class="keyword">int</span> <span class="keyword">count</span>;</div><div class="line"></div><div class="line">	<span class="comment">// the directory where we keep the plugin classes</span></div><div class="line">	String pluginsDir;</div><div class="line"></div><div class="line">	<span class="comment">// a list where we keep an initialized object of each plugin class</span></div><div class="line">	List plugins;</div><div class="line"></div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main (String args[]) &#123;</div><div class="line">		PluginDemo demo = <span class="keyword">new</span> PluginDemo(args);</div><div class="line">		demo.getPlugins();</div><div class="line">		demo.runPlugins();</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	PluginDemo (String args[]) &#123;</div><div class="line">		<span class="keyword">if</span> (args.length &amp;gt; <span class="number">0</span>)</div><div class="line">			<span class="keyword">count</span> = Integer.parseInt(args[<span class="number">0</span>]);</div><div class="line">		<span class="keyword">else</span></div><div class="line">			<span class="keyword">count</span> = <span class="number">1</span>;</div><div class="line"></div><div class="line">		<span class="keyword">if</span> (args.length &amp;gt; <span class="number">1</span>)</div><div class="line">			pluginsDir = args[<span class="number">0</span>];</div><div class="line">		<span class="keyword">else</span></div><div class="line">			pluginsDir = <span class="string">"plugins"</span>;</div><div class="line"></div><div class="line">		plugins = <span class="keyword">new</span> ArrayList();</div><div class="line"></div><div class="line">		System.setSecurityManager(<span class="keyword">new</span> PluginSecurityManager(pluginsDir));</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">protected</span> <span class="keyword">void</span> getPlugins() &#123;</div><div class="line">		<span class="keyword">File</span> dir = <span class="keyword">new</span> <span class="keyword">File</span>(System.getProperty(<span class="string">"user.dir"</span>) + <span class="keyword">File</span>.separator + pluginsDir);</div><div class="line">		ClassLoader cl = <span class="keyword">new</span> PluginClassLoader(dir);</div><div class="line">		<span class="keyword">if</span> (dir.exists() &amp;amp;&amp;amp; dir.isDirectory()) &#123;</div><div class="line">			<span class="comment">// we'll only load classes directly in this directory -</span></div><div class="line">			<span class="comment">// no subdirectories, and no classes in packages are recognized</span></div><div class="line">			String[] files = dir.list();</div><div class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&amp;lt;files.length; i++) &#123;</div><div class="line">				<span class="keyword">try</span> &#123;</div><div class="line">					<span class="comment">// only consider files ending in ".class"</span></div><div class="line">					<span class="keyword">if</span> (! files[i].endsWith(<span class="string">".class"</span>))</div><div class="line">						<span class="keyword">continue</span>;</div><div class="line"></div><div class="line">					<span class="keyword">Class</span> c = cl.loadClass(files[i].substring(<span class="number">0</span>, files[i].indexOf(<span class="string">"."</span>)));</div><div class="line">					<span class="keyword">Class</span>[] intf = c.getInterfaces();</div><div class="line">					<span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>; j&amp;lt;intf.length; j++) &#123;</div><div class="line">						<span class="keyword">if</span> (intf[j].getName().equals(<span class="string">"PluginFunction"</span>)) &#123;</div><div class="line">							<span class="comment">// the following line assumes that PluginFunction has a no-argument constructor</span></div><div class="line">							PluginFunction pf = (PluginFunction) c.newInstance();</div><div class="line">							plugins.add(pf);</div><div class="line">							<span class="keyword">continue</span>;</div><div class="line">						&#125;</div><div class="line">					&#125;</div><div class="line">				&#125; <span class="keyword">catch</span> (Exception ex) &#123;</div><div class="line">					System.err.<span class="keyword">println</span>(<span class="string">"File "</span> + files[i] + <span class="string">" does not contain a valid PluginFunction class."</span>);</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">protected</span> <span class="keyword">void</span> runPlugins() &#123;</div><div class="line">		Iterator iter = plugins.iterator();</div><div class="line">		<span class="keyword">while</span> (iter.hasNext()) &#123;</div><div class="line">			PluginFunction pf = (PluginFunction) iter.<span class="keyword">next</span>();</div><div class="line">			<span class="keyword">try</span> &#123;</div><div class="line">				pf.setParameter(<span class="keyword">count</span>);</div><div class="line">				System.out.<span class="keyword">print</span>(pf.getPluginName());</div><div class="line">				System.out.<span class="keyword">print</span>(<span class="string">" ( "</span>+<span class="keyword">count</span>+<span class="string">" ) = "</span>);</div><div class="line">				<span class="keyword">if</span> (pf.hasError()) &#123;</div><div class="line">					System.out.<span class="keyword">println</span>(<span class="string">"there was an error during plugin initialization"</span>);</div><div class="line">					<span class="keyword">continue</span>;</div><div class="line">				&#125;</div><div class="line">				<span class="keyword">int</span> result = pf.getResult();</div><div class="line">				<span class="keyword">if</span> (pf.hasError())</div><div class="line">					System.out.<span class="keyword">println</span>(<span class="string">"there was an error during plugin execution"</span>);</div><div class="line">				<span class="keyword">else</span></div><div class="line">					System.out.<span class="keyword">println</span>(result);</div><div class="line">				<span class="keyword">count</span>++;</div><div class="line">			&#125; <span class="keyword">catch</span> (SecurityException secEx) &#123;</div><div class="line">				System.err.<span class="keyword">println</span>(<span class="string">"plugin '"</span>+pf.getClass().getName()+<span class="string">"' tried to do something illegal"</span>);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Ta thấy trong hàm <code>getPlugins</code> có một vòng for để load hết các class mà có interface là <code>PluginFunction</code> rồi tạo ra một thực thể của class đó và lưu vào mảng <code>plugins</code>. Sau đó hàm <code>runPlugins</code> sẽ duyệt qua tất cả cảc plugins set tham số chạy hàm run của từng plugin và in ra kết quả.</p>
+<p>Ngoài ra hàm <code>getPlugins</code> còn có một điều thú vị nữa chính là dòng setSecurityManager, vì đây là các plugins độc lập với hệ thống nên ta phải xét quền hạn cho nó chứ nhỡ thanh niên nào vui tính lại cho cái plugin xóa hết hệ điều hành thì chỉ biết ngồi đấy mà khóc thôi 😭.</p>
+<p>Đây là nội dung file <code>PluginSecurityManager.java</code></p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div></pre></td><td class="code"><pre><div class="line">import java.io.File;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment">* This is a fairly uptight security manager subclass. Classes loaded by</span></div><div class="line"><span class="comment">* the PluginClassLoader are highly restricted in what they are allowed to do.</span></div><div class="line"><span class="comment">* This is okay, because they're only supposed to calculate some values,</span></div><div class="line"><span class="comment">* for which all necessary data is already available to them.</span></div><div class="line"><span class="comment">*</span></div><div class="line"><span class="comment">* A SecurityManager consists of various methods that the system calls to</span></div><div class="line"><span class="comment">* check whether certain sensitive operations should be allowed. These</span></div><div class="line"><span class="comment">* methods can throw a SecurityException to prevent the operation from</span></div><div class="line"><span class="comment">* happening. With this SecurityManager, we want to prevent untrusted</span></div><div class="line"><span class="comment">* code that was loaded by a class loader from performing those sensitive operations.</span></div><div class="line"><span class="comment">* So we use inherited SecurityManager methods to check whether the call is being</span></div><div class="line"><span class="comment">* made by an untrusted class. If it is, we throw an exception.</span></div><div class="line"><span class="comment">* Otherwise, we simply return, allowing the operation to proceed normally.</span></div><div class="line"><span class="comment">*/</span></div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">PluginSecurityManager</span> <span class="title">extends</span> <span class="title">SecurityManager</span> &#123;</div><div class="line"></div><div class="line">	<span class="keyword">private</span> String pluginDir = <span class="literal">null</span>;</div><div class="line"></div><div class="line">	PluginSecurityManager (String dir) &#123;</div><div class="line">		pluginDir = dir;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">/**</span></div><div class="line"><span class="comment">	 * This is the basic method that tests whether there is a class loaded</span></div><div class="line"><span class="comment">	 * by a ClassLoader anywhere on the stack. If so, it means that that</span></div><div class="line"><span class="comment">	 * untrusted code is trying to perform some kind of sensitive operation.</span></div><div class="line"><span class="comment">	 * We prevent it from performing that operation by throwing an exception.</span></div><div class="line"><span class="comment">	 * trusted() is called by most of the check...() methods below.</span></div><div class="line"><span class="comment">	 */</span></div><div class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">trusted</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="keyword">if</span> (inClassLoader()) <span class="keyword">throw</span> <span class="keyword">new</span> SecurityException();</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">/**</span></div><div class="line"><span class="comment">	 * These are all the specific checks that a security manager can</span></div><div class="line"><span class="comment">	 * perform. They all just call one of the methods above and throw a</span></div><div class="line"><span class="comment">	 * SecurityException if the operation is not allowed. This </span></div><div class="line"><span class="comment">	 * SecurityManager subclass is perhaps a little too restrictive. For</span></div><div class="line"><span class="comment">	 * example, it doesn't allow loaded code to read *any* system properties,</span></div><div class="line"><span class="comment">	 * even though some of them are quite harmless.</span></div><div class="line"><span class="comment">	 */</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">checkCreateClassLoader</span>(<span class="params"></span>) </span>&#123; trusted(); &#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">checkAccess</span> (<span class="params">Thread g</span>) </span>&#123; trusted(); &#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">checkAccess</span> (<span class="params">ThreadGroup g</span>) </span>&#123; trusted(); &#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">checkExit</span> (<span class="params"><span class="keyword">int</span> status</span>) </span>&#123; <span class="keyword">throw</span> <span class="keyword">new</span> SecurityException(<span class="string">"Not allowed."</span>); &#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">checkExec</span> (<span class="params">String cmd</span>) </span>&#123; trusted(); &#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">checkLink</span> (<span class="params">String lib</span>) </span>&#123; trusted(); &#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">checkRead</span> (<span class="params">java.io.FileDescriptor fd</span>) </span>&#123; trusted(); &#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">checkRead</span> (<span class="params">String file</span>) </span>&#123;</div><div class="line"><span class="comment">//		String path = new File(file).getParentFile().getAbsolutePath();</span></div><div class="line"><span class="comment">//		if (! path.endsWith(pluginDir))</span></div><div class="line">			trusted();</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">checkRead</span> (<span class="params">String file, Object context</span>) </span>&#123; trusted(); &#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">checkWrite</span> (<span class="params">java.io.FileDescriptor fd</span>) </span>&#123; trusted(); &#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">checkWrite</span> (<span class="params">String file</span>) </span>&#123; trusted(); &#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">checkDelete</span> (<span class="params">String file</span>) </span>&#123; trusted(); &#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">checkConnect</span> (<span class="params">String host, <span class="keyword">int</span> port</span>) </span>&#123; trusted(); &#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">checkConnect</span> (<span class="params">String host,<span class="keyword">int</span> port,Object context</span>) </span>&#123;trusted();&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">checkListen</span> (<span class="params"><span class="keyword">int</span> port</span>) </span>&#123; trusted(); &#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">checkAccept</span> (<span class="params">String host, <span class="keyword">int</span> port</span>) </span>&#123; trusted(); &#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">checkMulticast</span> (<span class="params">java.net.InetAddress maddr</span>) </span>&#123; trusted(); &#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">checkMulticast</span> (<span class="params">java.net.InetAddress maddr, <span class="keyword">byte</span> ttl</span>) </span>&#123; trusted(); &#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">checkPropertiesAccess</span>(<span class="params"></span>) </span>&#123; trusted(); &#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">checkPropertyAccess</span> (<span class="params">String key</span>) </span>&#123;</div><div class="line"><span class="comment">//		if (! key.equals("user.dir"))</span></div><div class="line">			trusted();</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">checkPrintJobAccess</span>(<span class="params"></span>) </span>&#123; trusted(); &#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">checkSystemClipboardAccess</span>(<span class="params"></span>) </span>&#123; trusted(); &#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">checkAwtEventQueueAccess</span>(<span class="params"></span>) </span>&#123; trusted(); &#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">checkSetFactory</span>(<span class="params"></span>) </span>&#123; trusted(); &#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">checkMemberAccess</span> (<span class="params">Class clazz, <span class="keyword">int</span> which</span>) </span>&#123; trusted(); &#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">checkSecurityAccess</span> (<span class="params">String provider</span>) </span>&#123; trusted(); &#125;</div><div class="line"></div><div class="line">	<span class="comment">/** Loaded code can only load classes from java.* packages */</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">checkPackageAccess</span> (<span class="params">String pkg</span>) </span>&#123; </div><div class="line">		<span class="keyword">if</span> (inClassLoader() &amp;amp;&amp;amp; !pkg.startsWith(<span class="string">"java."</span>) &amp;amp;&amp;amp; !pkg.startsWith(<span class="string">"javax."</span>))</div><div class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> SecurityException();</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">/** Loaded code can't define classes in java.* or sun.* packages */</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">checkPackageDefinition</span> (<span class="params">String pkg</span>) </span>&#123; </div><div class="line">		<span class="keyword">if</span> (inClassLoader() &amp;amp;&amp;amp; ((pkg.startsWith(<span class="string">"java."</span>) || pkg.startsWith(<span class="string">"javax."</span>) || pkg.startsWith(<span class="string">"sun."</span>))))</div><div class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> SecurityException();</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">/** </span></div><div class="line"><span class="comment">	 * This is the one SecurityManager method that is different from the</span></div><div class="line"><span class="comment">	 * others. It indicates whether a top-level window should display an</span></div><div class="line"><span class="comment">	 * "untrusted" warning. The window is always allowed to be created, so</span></div><div class="line"><span class="comment">	 * this method is not normally meant to throw an exception. It should</span></div><div class="line"><span class="comment">	 * return true if the window does not need to display the warning, and</span></div><div class="line"><span class="comment">	 * false if it does. In this example, however, our text-based Service</span></div><div class="line"><span class="comment">	 * classes should never need to create windows, so we will actually</span></div><div class="line"><span class="comment">	 * throw an exception to prevent any windows from being opened.</span></div><div class="line"><span class="comment">	 **/</span></div><div class="line">	<span class="function"><span class="keyword">public</span> boolean <span class="title">checkTopLevelWindow</span> (<span class="params">Object window</span>) </span>&#123; </div><div class="line">		trusted();</div><div class="line">		<span class="keyword">return</span> <span class="literal">true</span>; </div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Ngoài ra ta còn cần 1 cái loader để load các plugins ra nữa <code>PluginClassLoader.java</code></p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.io.*;</div><div class="line"></div><div class="line">  <span class="comment">/**</span></div><div class="line"><span class="comment">   * In order to impose tight security restrictions on untrusted classes but</span></div><div class="line"><span class="comment">   * not on trusted system classes, we have to be able to distinguish between</span></div><div class="line"><span class="comment">   * those types of classes. This is done by keeping track of how the classes</span></div><div class="line"><span class="comment">   * are loaded into the system. By definition, any class that the interpreter</span></div><div class="line"><span class="comment">   * loads directly from the CLASSPATH is trusted. This means that we can't</span></div><div class="line"><span class="comment">   * load untrusted code in that way--we can't load it with Class.forName().</span></div><div class="line"><span class="comment">   * Instead, we create a ClassLoader subclass to load the untrusted code.</span></div><div class="line"><span class="comment">   * This one loads classes from a specified directory (which should not</span></div><div class="line"><span class="comment">   * be part of the CLASSPATH).</span></div><div class="line"><span class="comment">   */</span></div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> PluginClassLoader <span class="keyword">extends</span> ClassLoader &#123;</div><div class="line">    <span class="comment">/** This is the directory from which the classes will be loaded */</span></div><div class="line">    <span class="keyword">File</span> directory;</div><div class="line"></div><div class="line">    <span class="comment">/** The constructor. Just initialize the directory */</span></div><div class="line">    <span class="keyword">public</span> PluginClassLoader (<span class="keyword">File</span> dir) &#123;</div><div class="line">		directory = dir;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">    <span class="comment">/** A convenience method that calls the 2-argument form of this method */</span></div><div class="line">    <span class="keyword">public</span> <span class="keyword">Class</span> loadClass (String name) <span class="keyword">throws</span> ClassNotFoundException &#123; </div><div class="line">      <span class="keyword">return</span> loadClass(name, <span class="keyword">true</span>); </div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * This is one abstract method of ClassLoader that all subclasses must</span></div><div class="line"><span class="comment">     * define. Its job is to load an array of bytes from somewhere and to</span></div><div class="line"><span class="comment">     * pass them to defineClass(). If the resolve argument is true, it must</span></div><div class="line"><span class="comment">     * also call resolveClass(), which will do things like verify the presence</span></div><div class="line"><span class="comment">     * of the superclass. Because of this second step, this method may be called to</span></div><div class="line"><span class="comment">     * load superclasses that are system classes, and it must take this into account.</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="keyword">public</span> <span class="keyword">Class</span> loadClass (String classname, <span class="keyword">boolean</span> resolve) <span class="keyword">throws</span> ClassNotFoundException &#123;</div><div class="line">      <span class="keyword">try</span> &#123;</div><div class="line">        <span class="comment">// Our ClassLoader superclass has a built-in cache of classes it has</span></div><div class="line">        <span class="comment">// already loaded. So, first check the cache.</span></div><div class="line">        <span class="keyword">Class</span> c = findLoadedClass(classname);</div><div class="line"></div><div class="line">        <span class="comment">// After this method loads a class, it will be called again to</span></div><div class="line">        <span class="comment">// load the superclasses. Since these may be system classes, we've</span></div><div class="line">        <span class="comment">// got to be able to load those too. So try to load the class as</span></div><div class="line">        <span class="comment">// a system class (i.e. from the CLASSPATH) and ignore any errors</span></div><div class="line">        <span class="keyword">if</span> (c == <span class="keyword">null</span>) &#123;</div><div class="line">          <span class="keyword">try</span> &#123; c = findSystemClass(classname); &#125;</div><div class="line">          <span class="keyword">catch</span> (Exception ex) &#123;&#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">// If the class wasn't found by either of the above attempts, then</span></div><div class="line">        <span class="comment">// try to load it from a file in (or beneath) the directory</span></div><div class="line">        <span class="comment">// specified when this ClassLoader object was created. Form the</span></div><div class="line">        <span class="comment">// filename by replacing all dots in the class name with</span></div><div class="line">        <span class="comment">// (platform-independent) file separators and by adding the ".class" extension.</span></div><div class="line">        <span class="keyword">if</span> (c == <span class="keyword">null</span>) &#123;</div><div class="line">          <span class="comment">// Figure out the filename</span></div><div class="line">          String filename = classname.replace(<span class="string">'.'</span>,<span class="keyword">File</span>.separatorChar)+<span class="string">".class"</span>;</div><div class="line"></div><div class="line">          <span class="comment">// Create a File object. Interpret the filename relative to the</span></div><div class="line">          <span class="comment">// directory specified for this ClassLoader.</span></div><div class="line">          <span class="keyword">File</span> f = <span class="keyword">new</span> <span class="keyword">File</span>(directory, filename);</div><div class="line"></div><div class="line">          <span class="comment">// Get the length of the class file, allocate an array of bytes for</span></div><div class="line">          <span class="comment">// it, and read it in all at once.</span></div><div class="line">          <span class="keyword">int</span> length = (<span class="keyword">int</span>) f.length();</div><div class="line">          <span class="keyword">byte</span>[] classbytes = <span class="keyword">new</span> <span class="keyword">byte</span>[length];</div><div class="line">          DataInputStream in = <span class="keyword">new</span> DataInputStream(<span class="keyword">new</span> FileInputStream(f));</div><div class="line">          in.readFully(classbytes);</div><div class="line">          in.close();</div><div class="line"></div><div class="line">          <span class="comment">// Now call an inherited method to convert those bytes into a Class</span></div><div class="line">          c = defineClass(classname, classbytes, <span class="number">0</span>, length);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">// If the resolve argument is true, call the inherited resolveClass method.</span></div><div class="line">        <span class="keyword">if</span> (resolve) resolveClass(c);</div><div class="line"></div><div class="line">        <span class="comment">// And we're done. Return the Class object we've loaded.</span></div><div class="line">        <span class="keyword">return</span> c;</div><div class="line">      &#125;</div><div class="line">      <span class="comment">// If anything goes wrong, throw a ClassNotFoundException error</span></div><div class="line">      <span class="keyword">catch</span> (Exception ex) &#123; <span class="keyword">throw</span> <span class="keyword">new</span> ClassNotFoundException(ex.toString()); &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Haiz, về cơ bản hệ thống setup thế là xong, tiếp theo ta sẽ cần 1 2 cái plugins để test thủ xem nó có chạy ổn không, ta sẽ đặt các file này trong thư mục <code>plugins</code>.</p>
+<p>tình bình phưng của tham số:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * This plugin squares its argument.</span></div><div class="line"><span class="comment"> */</span></div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Square</span> <span class="keyword">implements</span> <span class="title">PluginFunction</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">int</span> parameter = <span class="number">0</span>;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setParameter</span> <span class="params">(<span class="keyword">int</span> param)</span> </span>&#123;</div><div class="line">		parameter = param;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getResult</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> parameter * parameter;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getPluginName</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="string">"Square"</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">// yes, this operation can fail, but we are going to ignore this here</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasError</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<p>cộng 1 đơn vị vào tham số:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * This plugin adds one to the parameter.</span></div><div class="line"><span class="comment"> */</span></div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PlusOne</span> <span class="keyword">implements</span> <span class="title">PluginFunction</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">int</span> parameter = <span class="number">0</span>;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setParameter</span> <span class="params">(<span class="keyword">int</span> param)</span> </span>&#123;</div><div class="line">		parameter = param;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getResult</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> parameter + <span class="number">1</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getPluginName</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="string">"PlusOne"</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">// yes, ths operation can fail, but we are going to ignore this here</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasError</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>TryToExit.java</code> thử cho thanh niên này lạm quền tý xem có được không, trong <code>PluginSecurityManager</code> ta đã set không cho plugin thoát chương trình rồi.</p>
+<p> </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * This plugin tries to call System.exit(), which the SecurityManager doesn't allow.</span></div><div class="line"><span class="comment"> */</span></div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TryToExit</span> <span class="keyword">implements</span> <span class="title">PluginFunction</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setParameter</span> <span class="params">(<span class="keyword">int</span> param)</span> </span>&#123;</div><div class="line">		<span class="comment">// this function doesn't care about its parameter,</span></div><div class="line">		<span class="comment">// so it doesn't even store it for later use</span></div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getResult</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="comment">// The next line will be caught by the SecurityManagers 'checkExit' method.</span></div><div class="line">		System.exit(<span class="number">0</span>);</div><div class="line">		<span class="keyword">return</span> <span class="number">42</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getPluginName</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="string">"TryToExit"</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">// yes, this operation can fail, but we are going to ignore this here</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasError</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Tiếp theo là dịch và chạy thử, nếu không có gì sai thì sẽ thu được output như này, mình dùng java 8 nên có phun ra mấy cái Note, thôi kệ dù sao nó vẫn chạy được 😄:</p>
+<pre class="theme:dark-terminal lang:sh decode:true ">minh@MINH-PC:~/Desktop/Plugin$ javac *.java
+Note: PluginSecurityManager.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: PluginDemo.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+minh@MINH-PC:~/Desktop/Plugin$ java PluginDemo TryToExit ( 1 ) = plugin 'TryToExit' tried to do something illegal
+PlusOne ( 1 ) = 2 
+Square ( 2 ) = 4</pre>
+<p>Thực ra toppic này còn thêm vấn đề nữa là build ra file jar và cài đặt plugin bằng xml nhưng tạp thời thế này đã. Xin hẹn ae một dịp khác.</p>
+<p>Xin chân thành cảm ơn bộ code mẫu của <a href="http://www.javaranch.com/contact.jsp#UlfDittmer" target="_blank" rel="external">Ulf Dittmer</a>, các bạn code thể <a href="http://blogk.xyz/wp-content/uploads/2016/08/Plugin.zip">download</a> code dể tham khảo.</p>
+<p>Phùu… cảm ơn ae đã theo dõi đến tận đây, bài đã dài tay quay đã mỏi mình xin phép dừng phím tại đây. Chúc ae cuối tuần vui vẻ.<br>
+xin chào thân ái và quết thắng.</p>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/no-star-where/" data-toggle="tooltip" data-placement="top" title="No star where">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/gitignore-la-gi-no-co-quan-trong-khong/" data-toggle="tooltip" data-placement="top" title="Gitignore là gì? Nó có quan trọng không?">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                    <div class="comment">
+                        <div id="disqus_thread" class="disqus-thread"></div>
+                    </div>
+                
+                <!-- disqus comment end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Plugin là khỉ gì?</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Plugin có gì hay ho?</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Rồi, thế cài đặt thằng này thế nào?</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">Ví dụ trực quan nè</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#java" title="java">java</a>
+                        
+                          <a class="tag" href="/tags/#plugin" title="plugin">plugin</a>
+                        
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<!-- disqus embedded js code start (one page only need to embed once) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "blogkxyz";
+    var disqus_identifier = "http://blogk.xyz/cho-phep-cai-plugin-trong-java-nhu-the-nao/";
+    var disqus_url = "http://blogk.xyz/cho-phep-cai-plugin-trong-java-nhu-the-nao/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus embedded js code start end -->
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/tutv95">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/tutv95">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/tutv">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://www.linkedin.com/in/tutv95">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; BlogK 2018
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://blogk.xyz/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-60224927-2';
+    var _gaDomain = 'blogk.xyz';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+
+</body>
+
+</html>

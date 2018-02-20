@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          Những thuộc tính quan trọng khi xây dựng bố cục website - Phần 1 - BlogK - Share what I know
+        
+    </title>
+
+    <link rel="canonical" href="http://blogk.xyz/nhung-thuoc-tinh-quan-trong-khi-xay-dung-bo-cuc-website-phan-1/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('/img/blog-bg.jpg')
+            /*post*/
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                        </div>
+                        <h1>Những thuộc tính quan trọng khi xây dựng bố cục website - Phần 1</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by BlogK on
+                            2015-07-24
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">BlogK</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/nhat-ky-tap-ta/">Nhật ký tập tạ!</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/nhung-nguoi-dong-gop/">Những người đóng góp</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/toi-la-nguyen-tien-minh/">Tôi là Nguyễn Tiến Minh</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/toi-la-tu/">Tôi là Tú</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p>Bài này mình sẽ nói về những nguyên tắc cơ bản nhưng cực kỳ quan trọng khi thiết kế bố cục, bày trí cho 1 trang web.</p>
+<p><img src="../media/learn-layout.png" alt="learn-layout"></p>
+<h3><span id="1-no-layout">1. No layout</span></h3>
+<p>Đầu tiên là khi chưa có layout (layout mặc định), nó cũng khá ổn nêu bạn muốn một cột to để chứa nội dung. Tuy nhiên nó thực sự gây phiền nếu thực sự người dùng có 1 màn hình cực rộng, sau khi họ đọc hết dòng thì họ lại phải quay sang bên phải rất xa để tìm dòng tiếp theo để đọc.</p>
+<p>Trước khi chúng ta giải quyết vấn đề này, chúng ta cùng tìm hiểu rõ về thuộc tính <span style="color:#E20461">display</span>.<a id="more"></a></p>
+<h3><span id="2-display">2. Display</span></h3>
+<p><strong>display</strong> là thuộc tính cực kỳ quan trọng trong việc xây dựng bố cục. Mọi phần tử đều có một giá trị display mặc định tùy vào loại phần từ. Có 2 kiểu thông dụng và thường dùng nhất là <span style="color:#E20461">block</span> và <span style="color:#E20461">inline</span>. Một phần tử kiểu block thường được gọi là phần tử “<strong>block-level</strong>”, còn phần tử kiểu inline thì vẫn chỉ gọi là phần tử inline.</p>
+<ul>
+<li><strong>block</strong>: thẻ div là một tiêu chuẩn cho kiểu “<strong>block-level</strong>”. Một “block-level” được bắt đầu trên một dòng mới và nó trải dài ra cả 2 bên mà nó có thể. Các phần tử “block-level” khác như p, form hay như 1 số thẻ mới của HTML5 như header, footer, section,…</li>
+<li><strong>inline</strong>: thẻ span là phần tử inline tiêu chuẩn. Một phần tử kiểu inline có thể tự bẻ dòng khi hết dòng. Thẻ a cũng là một trong những thẻ thông dụng kiểu inline.</li>
+<li><strong>none</strong>: Một giá trị thông dụng nữa của <span style="color:#E20461">display</span> là <span style="color:#E20461">none</span>. Cái này thường được dùng trong script để ẩn hay hiện một số phần tử nào đó mà không muốn xóa hay tạo lại chúng.<br>
+Một kiểu ẩn hiện khác là <span style="color:#E20461">visibility</span>. Nhưng nó khác với display, ví dụ như <span style="color:#E20461">display:none</span> thì phần tử đó sẽ bị biến mất luôn, không gian của nó vừa chiếm sẽ được giải phóng cho các phần tử khác. Còn với <span style="color:#E20461">visibility:hidden</span> thì phần tử đó vẫn còn nguyên ở đó nhưng nó sẽ không xuất hiện (giống như kiểu tàng hình), điều đó có nghĩa nó là vẫn chiếm không gian ở đó mà nó đang chiếm giữ (giống như kiểu nếu thằng nào mà tàng hình thì ta vẫn có thể sờ thấy nó nhưng không thể nhìn thấy).</li>
+<li><strong>Kiểu khác</strong>: Có một số giá trị <strong>display</strong> lạ lẫm hơn như <span style="color:#E20461">list-item</span> hay <span style="color:#E20461">talbe</span>. Bạn có thể xem qua <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display" target="_blank" rel="external">danh sách các giá trị của display</a> này.</li>
+<li><strong>Mở rộng thêm</strong>: Như ta đã đề cập từ trước thì mọi phàn tử đều có giá trị display mặc định của nó. Tuy nhiên, chúng ta luôn luôn có thể ghi đè thuộc tính display của nó. Bạn có thể sử dụng kiểu này để tùy chỉnh kiểu display cho phần tử có nghĩa riêng biệt. Một ví dụ điển hình như là sử dùng <span style="color:#E20461">display:inline</span> cho thẻ li để tạo một menu ngang.</li>
+</ul>
+<h3><span id="3-margin-auto">3. margin: auto;</span></h3>
+<p><img src="../media/margin_auto.png" alt="margin_auto"></p>
+<p>Cài đặt thuộc tính width cho một phần tử kiểu “<strong>block-level</strong>” sẽ ngăn chặn nó trải dài hết ra 2 bên mà nó có thể. Sau đó bạn có thể cài đặt thêm thuộc tính <span style="color:#E20461">margin:auto</span> để căn giữa theo chiều ngang.<br>
+Nhưng lại có 1 vấn đề xảy ra khi chiều ngang của cửa sổ trình duyệt nhỏ hơn giá trị width mà bạn đã cho. Điều này dẫn đên việc người dùng sẽ phải kéo thanh cuộn ngang sang để xem được hết nội dung. Đừng lo lắng, chúng ta sẽ giải quyết vấn đề này ở phần tiếp theo! Let’s go :]]</p>
+<h3><span id="4-max-width">4. max-width</span></h3>
+<p>Sử dụng <strong>max-width</strong> thay vì dùng width để cải thiện cho những màn hình trình duyệt cỡ nhỏ. Điều này cực kì quan trọng khi bạn muốn tạo một <strong>website responsive</strong>.<br>
+<img src="../media/max_width.png" alt="max_width"><br>
+Hỗ trợ: <strong>max-width</strong> được hỗ trợ trên tất cả các trình duyệt và <span style="color:#E20461">IE7</span> trở lên.</p>
+<h3><span id="5-mô-hình-khối">5. Mô hình khối</span></h3>
+<p>Trong khi chúng ta đang nói về width, chúng ta nên quan tâm đến 1 thứ nữa là 1 chiều rộng của phần tử không hề báo trước.</p>
+<p>Nếu bạn set with cho 1 phần tử nhưng nó sẽ có thể to hơn như bạn nghĩ nếu bạn set <strong>border</strong> hoặc <strong>padding</strong> cho khối đó. Border và padding sẽ tự phủ rông ra chứ nó không chiếm phần bên trong của khối đó đã cài đặt. Bạn có thể xem ví dụ của 2 phần tử dưới đây.</p>
+<script src="https://gist.github.com/tutv95/bb114c298b6002758ece839d0db030c6.js"></script>
+<p>Và đây là kết quả:<br>
+<img src="../media/box_model.png" alt="box_model"><br>
+Bạn có thể thấy phần bên trong nội dung của box đều có chiều rộng như nhau (500px), nhưng ở box có class <strong>fancy</strong> thì to hơn là do có <strong>padding</strong> và <strong>border</strong> lớn hơn nên nó sẽ phình ra rộng hơn.</p>
+<p>Vậy để 2 ô bằng nhau thì ta cần có phép tính để căn chỉnh with sao cho phù hợp. Nhưng thật may mắn ta không cần phải làm thế…</p>
+<h3><span id="6-box-sizing">6. box-sizing</span></h3>
+<p>Để giải quyết vấn đề trên thì thêm một thuộc tính mới ra đời: <span style="color:#E20461">box-sizing</span>. Khi ta đặt: <span style="color:#E20461">box-sizing: border-box;</span> thì trên phần tử đó, <strong>padding</strong> và <strong>border</strong> không còn làm tăng chiều rộng của phần tử đó nữa mà nó tự lấy 1 phần bên trong của phần tử đó làm không gian cho <strong>padding</strong> và <strong>border</strong>, và đương nhiên phần không gian cho nội dung của phần tử bị nhỏ lại. Bạn có thể xem ví dụ dưới đây:</p>
+<script src="https://gist.github.com/tutv95/e45e4d6ab443b293326ad78119e5672f.js"></script>
+<p>Và đây là kết quả, cả 2 box có chiều dài bằng nhau mặc dù chúng có <strong>padding</strong> và <strong>border</strong> không bằng nhau:</p>
+<p><img src="../media/box-sizing.png" alt="box-sizing"></p>
+<p>Việc điều chỉnh như thế này là rất hay nên nhiều lập trình viên muốn tất cả các phần tử đều có thuộc tính này bằng cách sử dụng <strong>universal selector</strong>:</p>
+<script src="https://gist.github.com/tutv95/7f0cb42cfd4c3fea4acc8ae22a9d7138.js"></script>
+<p>Và hãy nên sử dụng tiền tố <span style="color:#E20461">-webkit-</span> và <span style="color:#E20461">-moz-</span> để nó có thể chạy trên tất cả các trình duyệt nhé.</p>
+<p>Bài này cũng khá dài rồi nên mình sẽ dừng lại ở đây và sẽ viết tiếp phần <a href="http://tutran.net/nhung-thuoc-tinh-quan-trong-khi-xay-dung-bo-cuc-website-p2.html" target="_blank" rel="external">tiếp theo</a>.</p>
+<p>Bài được dịch từ: <strong><a href="http://learnlayout.com" target="_blank" rel="external">learnlayout.com</a></strong></p>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/nhung-thuoc-tinh-quan-trong-khi-xay-dung-bo-cuc-website-phan-2/" data-toggle="tooltip" data-placement="top" title="Những thuộc tính quan trọng khi xây dựng bố cục website - Phần 2">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/note-mot-so-meo-khi-dung-ubuntu/" data-toggle="tooltip" data-placement="top" title="[Note] Một số mẹo khi dùng Ubuntu">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                    <div class="comment">
+                        <div id="disqus_thread" class="disqus-thread"></div>
+                    </div>
+                
+                <!-- disqus comment end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">1. No layout</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">2. Display</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">3. margin: auto;</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">4. max-width</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">5. Mô hình khối</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">6. box-sizing</span></a></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<!-- disqus embedded js code start (one page only need to embed once) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "blogkxyz";
+    var disqus_identifier = "http://blogk.xyz/nhung-thuoc-tinh-quan-trong-khi-xay-dung-bo-cuc-website-phan-1/";
+    var disqus_url = "http://blogk.xyz/nhung-thuoc-tinh-quan-trong-khi-xay-dung-bo-cuc-website-phan-1/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus embedded js code start end -->
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/tutv95">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/tutv95">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/tutv">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://www.linkedin.com/in/tutv95">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; BlogK 2018
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://blogk.xyz/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-60224927-2';
+    var _gaDomain = 'blogk.xyz';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+
+</body>
+
+</html>

@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          Socket.IO là cái gì vợi? - BlogK - Share what I know
+        
+    </title>
+
+    <link rel="canonical" href="http://blogk.xyz/socket-io-la-cai-gi-voi/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            background-image: url('/img/blog-bg.jpg')
+            /*post*/
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#nodejs" title="nodejs">nodejs</a>
+                            
+                              <a class="tag" href="/tags/#chat realtime android" title="chat realtime android">chat realtime android</a>
+                            
+                              <a class="tag" href="/tags/#socket" title="socket">socket</a>
+                            
+                              <a class="tag" href="/tags/#socket.io" title="socket.io">socket.io</a>
+                            
+                        </div>
+                        <h1>Socket.IO là cái gì vợi?</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by Minh on
+                            2016-06-12
+                        </span>
+                    </div>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">BlogK</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/nhat-ky-tap-ta/">Nhật ký tập tạ!</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/nhung-nguoi-dong-gop/">Những người đóng góp</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/toi-la-nguyen-tien-minh/">Tôi là Nguyễn Tiến Minh</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/toi-la-tu/">Tôi là Tú</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p>Xin chào 500 anh em!<br>
+Hôm nay mình sẽ giới thiệu cho các bạn một cái nhìn bao quát nhất và dễ hình dung nhất về thư viện <strong><a href="http://Socket.IO" target="_blank" rel="external">Socket.IO</a></strong> trên Android. Mong rằng sau khi đọc bài viết các bạn có thể tự tay xây dựng nên một ứng dụng realtime nho nhỏ hoặc sẽ nảy ra những ý tưởng hay ho với thư viện này.</p>
+<p><img src="../media/socketio-1.png" alt="socket.io la gi"></p>
+<p>Let’s go!</p>
+<a id="more"></a>
+<h2><span id="socketio-là-gì"> là gì?</span></h2>
+<p><strong><a href="http://Socket.IO" target="_blank" rel="external">Socket.IO</a></strong> là một bộ thư viện dành cho các ứng dụng web, mobile realtime. Với đặc trưng mạnh mẽ và dễ sử dụng, <strong><a href="http://Socket.IO" target="_blank" rel="external">Socket.IO</a></strong> đang dần trở nên quen thuộc với các nhà phát triển (Từ Microsoft Office, Yammer, Zendesk, Trello… tới những đội hackathon, những start up trẻ).</p>
+<h3><span id="thư-viện-này-gồm-2-phần">Thư viện này gồm 2 phần:</span></h3>
+<ul>
+<li><strong>Phía client</strong>: gồm bộ thư viện viết cho web(JavaScript), iOS, Android</li>
+<li><strong>Phía server</strong>: viết bằng JavaScript và dùng cho các máy chủ node.JS</li>
+</ul>
+<h2><span id="socketio-làm-gì"> làm gì?</span></h2>
+<p><strong><a href="http://Socket.IO" target="_blank" rel="external">Socket.IO</a></strong> cung cấp cho các nhà phát triển một cách đơn giản và thuận tiện để xây dựng một ứng dụng realtime đa nền tảng (web và mobile). Với bộ thư viện này, làm việc với socket trở nên đơn giản hơn rất nhiều.</p>
+<h3><span id="demo-với-ứng-dụng-android-cơ-bản">Demo với ứng dụng Android cơ bản</span></h3>
+<p>Thư viện <a href="http://Socket.IO" target="_blank" rel="external">Socket.IO</a> trên Android cung cấp những <strong>hàm cơ bản</strong> sau:</p>
+<ul>
+<li><strong>connect()</strong>: kết nối với server socket</li>
+<li><strong>on(event_name, listener)</strong>: đăng kí lắng nghe sự kiện từ server trả về</li>
+<li><strong>emit(event_name, data)</strong>: gửi một sự kiện lên server</li>
+<li><strong>off(event_name)</strong>: ngừng lắng nghe một sự kiện nào đó</li>
+</ul>
+<p>Với ví dụ này, mình sẽ sử dụng server cho sẵn của trang <a href="http://Socket.IO" target="_blank" rel="external">Socket.IO</a> để tạo một ứng dụng chat realtime. Bạn có thể dùng thử phiên bản web ở đây: <a href="http://socket.io/demos/chat/" target="_blank" rel="external">http://socket.io/demos/chat/</a>.</p>
+<p>**Chức năng chính: **</p>
+<ul>
+<li>Đăng nhập*   Nhận tin nhắn từ phòng chat*   Gửi tin nhắn tới phòng chat</li>
+</ul>
+<p><strong>Cài đặt thư viện liên quan:</strong><br>
+Ta dùng Gradle để quản lí những thư viện có trong project<br>
+Thêm dependency vào build.gradle:</p>
+<ul>
+<li>appcompat-v7 (lấy theme cho ảo ảo tí)</li>
+<li><a href="http://socket.io" target="_blank" rel="external">socket.io</a> (thiếu thì vứt đi nhé =)) )</li>
+</ul>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// app/build.gradle</span></div><div class="line"><span class="keyword">dependencies</span> &#123;</div><div class="line">    ....</div><div class="line">    <span class="keyword">compile</span> <span class="string">'com.android.support:appcompat-v7:23.4.0'</span></div><div class="line">    <span class="keyword">compile</span> <span class="string">'com.github.nkzawa:socket.io-client:0.3.0'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Làm xong bước này các bạn phải rebuild project để chắc chắn rằng Android Studio đã giúp ta tải source liên quan đến project về máy.</p>
+<p>Thêm quyền truy cập internet vào AndroidManifest.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- app/AndroidManifest.xml --&gt;</span></div><div class="line">    ...</div><div class="line">    <span class="tag">&lt;<span class="name">uses-permission</span> <span class="attr">android:name</span>=<span class="string">"android.permission.INTERNET"</span> /&gt;</span></div><div class="line">    ...</div><div class="line"><span class="tag">&lt;/<span class="name">manifest</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Tiếp theo, ta sẽ xây dựng một giao diện chat đơn giản gồm một listview chứa tin nhắn và một form nhập tin nhắn.</p>
+<p>Tạo một layout <strong>“activity_main.xml”</strong> với nội dung như sau:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"utf-8"</span><span class="meta">?&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">LinearLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:orientation</span>=<span class="string">"vertical"</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">ListView</span></span></div><div class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/lv_chat"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"0dp"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_weight</span>=<span class="string">"1"</span> /&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">TableRow</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:gravity</span>=<span class="string">"center"</span>&gt;</span></div><div class="line"></div><div class="line">        <span class="tag">&lt;<span class="name">EditText</span></span></div><div class="line"><span class="tag">            <span class="attr">android:id</span>=<span class="string">"@+id/edt_input"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"0dp"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:layout_weight</span>=<span class="string">"1"</span> /&gt;</span></div><div class="line"></div><div class="line">        <span class="tag">&lt;<span class="name">Button</span></span></div><div class="line"><span class="tag">            <span class="attr">android:id</span>=<span class="string">"@+id/btn_send"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></div><div class="line"><span class="tag">            <span class="attr">android:text</span>=<span class="string">"Send"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">TableRow</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Tạo một layout <strong>“item_chat.xml”</strong> với nội dung như sau:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"utf-8"</span><span class="meta">?&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">LinearLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:padding</span>=<span class="string">"8dp"</span></span></div><div class="line"><span class="tag">    <span class="attr">android:orientation</span>=<span class="string">"vertical"</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:textAppearance</span>=<span class="string">"?android:attr/textAppearanceLarge"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:text</span>=<span class="string">"Username"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:textStyle</span>=<span class="string">"bold"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/tv_username"</span> /&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_marginLeft</span>=<span class="string">"10dp"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_marginRight</span>=<span class="string">"10dp"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:textAppearance</span>=<span class="string">"?android:attr/textAppearanceMedium"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:textColor</span>=<span class="string">"@android:color/black"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:text</span>=<span class="string">"Hello Socket.io"</span></span></div><div class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/tv_message"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>Tạo một lớp <strong>ItemChat</strong> gồm thuộc tính username, message, các phương thức get, set tương ứng như sau:</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">class</span> ItemChat &#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> <span class="built_in">String</span> username;</div><div class="line">    <span class="keyword">private</span> <span class="built_in">String</span> message;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> ItemChat(<span class="built_in">String</span> username, <span class="built_in">String</span> message) &#123;</div><div class="line">        <span class="keyword">this</span>.username = username;</div><div class="line">        <span class="keyword">this</span>.message = message;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="built_in">String</span> getUsername() &#123;</div><div class="line">        <span class="keyword">return</span> username;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="built_in">void</span> setUsername(<span class="built_in">String</span> username) &#123;</div><div class="line">        <span class="keyword">this</span>.username = username;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="built_in">String</span> getMessage() &#123;</div><div class="line">        <span class="keyword">return</span> message;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="built_in">void</span> setMessage(<span class="built_in">String</span> message) &#123;</div><div class="line">        <span class="keyword">this</span>.message = message;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Tạo một <strong>Adapter</strong> cho Listview để gắn dữ liệu vào nó:</p>
+<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> android.content.Context;</div><div class="line"><span class="keyword">import</span> android.view.LayoutInflater;</div><div class="line"><span class="keyword">import</span> android.view.View;</div><div class="line"><span class="keyword">import</span> android.view.ViewGroup;</div><div class="line"><span class="keyword">import</span> android.widget.BaseAdapter;</div><div class="line"><span class="keyword">import</span> android.widget.TextView;</div><div class="line"></div><div class="line"><span class="keyword">import</span> java.util.ArrayList;</div><div class="line"></div><div class="line"><span class="keyword">import</span> too.fries.com.chatapp_socketio.R;</div><div class="line"><span class="keyword">import</span> too.fries.com.chatapp_socketio.ItemChat;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ChatAdapter</span> <span class="keyword">extends</span> <span class="title">BaseAdapter</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">private</span> Context mContext;</div><div class="line">    <span class="keyword">private</span> LayoutInflater mInflater;</div><div class="line">    <span class="keyword">private</span> ArrayList&lt;ItemChat&gt; itemChatArr;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ChatAdapter</span><span class="params">(Context context)</span></span>&#123;</div><div class="line">        <span class="keyword">this</span>.mContext = context;</div><div class="line">        <span class="keyword">this</span>.mInflater = LayoutInflater.from(context);</div><div class="line">        itemChatArr = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">addNewMsg</span><span class="params">(ItemChat itemChat)</span></span>&#123;</div><div class="line">        <span class="keyword">this</span>.itemChatArr.add(itemChat);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">int</span> <span class="title">getCount</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="function"><span class="keyword">return</span> itemChatArr.<span class="title">size</span><span class="params">()</span></span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="keyword">public</span> <span class="function">Object <span class="title">getItem</span><span class="params">(<span class="keyword">int</span> position)</span> </span>&#123;</div><div class="line">        <span class="function"><span class="keyword">return</span> itemChatArr.<span class="title">get</span><span class="params">(position)</span></span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">long</span> <span class="title">getItemId</span><span class="params">(<span class="keyword">int</span> position)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> position;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="keyword">public</span> <span class="function">View <span class="title">getView</span><span class="params">(<span class="keyword">int</span> position, View convertView, ViewGroup parent)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (convertView == <span class="keyword">null</span>)&#123;</div><div class="line">            convertView = mInflater.inflate(R.layout.item_chat, <span class="keyword">null</span>);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        TextView tvUsername = (TextView) convertView.findViewById(R.id.tv_username);</div><div class="line">        TextView tvMessage = (TextView) convertView.findViewById(R.id.tv_message);</div><div class="line"></div><div class="line">        tvUsername.setText(itemChatArr.get(position).getUsername());</div><div class="line">        tvMessage.setText(itemChatArr.get(position).getMessage());</div><div class="line">        <span class="keyword">return</span> convertView;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Bước chuẩn bị view đã xong, bây giờ ta sẽ thực hiện bước kết nối và truyền nhận dữ liệu bằng <a href="http://socket.io" target="_blank" rel="external">socket.io</a></p>
+<p>Tại <strong>MainActivity.java</strong> ta khởi tạo một đối tượng socket có nhiệm vụ truyền nhận dữ liệu với server</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta"><span class="meta-keyword">import</span> com.github.nkzawa.socketio.client.IO;</span></div><div class="line"><span class="meta"><span class="meta-keyword">import</span> com.github.nkzawa.socketio.client.Socket;</span></div><div class="line"></div><div class="line"><span class="keyword">private</span> Socket mSocket;</div><div class="line">&#123;</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">        mSocket = IO.socket(<span class="string">"http://chat.socket.io"</span>);</div><div class="line">    &#125; <span class="keyword">catch</span> (URISyntaxException e) &#123;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>IO.socket() trả về một đối tượng socket mặc định giao tiếp với “<a href="http://chat.socket.io" target="_blank" rel="external">http://chat.socket.io</a>”. Kết quả trả về từ phương thức này được lưu cache nên bạn có thể gọi nó mặc định ở các Activity hoặc Fragment khác (với cùng đối tượng socket với url tương ứng).</p>
+<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">    mSocket.connect();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>.onDestroy();</div><div class="line">    mSocket.disconnect();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Sau đó ta gọi hàm connect() để thực hiện kết nối. Việc kết nối nên được gọi đầu tiên lúc ứng dụng được bật lên và không liên quan tới vòng đời của các component Android (Activity, Fragment, Service). Tuy nhiên để ví dụ này đơn giản nhất, mình sẽ gắn nó với vòng đời của activity (gọi hàm connect() tại onCreate(), disconnect() tại onDestroy()).</p>
+<h3><span id="listening-on-events">Listening on events</span></h3>
+<p>Để hứng event từ server trả về, ta sẽ đăng kí sự kiện với tên của event đó tương ứng</p>
+<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line"></div><div class="line">    mSocket.on(<span class="string">"new message"</span>, onNewMessage);</div><div class="line">    mSocket.connect();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>.onDestroy();</div><div class="line"></div><div class="line">    mSocket.disconnect();</div><div class="line">    mSocket.off(<span class="string">"new message"</span>, onNewMessage);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>với <strong>“new message”</strong> là tên của sự kiện, <strong>onNewMessage</strong> là một đối tượng xử lí dữ liệu khi được gọi về, khi activity bị ẩn hoàn toàn ta gọi mSocket.off() để tắt lắng nghe sự kiện</p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> com.github.nkzawa.emitter.Emitter;</div><div class="line"></div><div class="line">Emitter.Listener onNewMessage = <span class="keyword">new</span> Emitter.Listener() &#123;</div><div class="line">    @Override</div><div class="line">    <span class="keyword">public</span> <span class="keyword">void</span> call(<span class="keyword">final</span> <span class="keyword">Object</span>... args) &#123;</div><div class="line">        MainActivity.<span class="keyword">this</span>.runOnUiThread(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">            @Override</div><div class="line">            <span class="keyword">public</span> <span class="keyword">void</span> run() &#123;</div><div class="line">                <span class="keyword">try</span> &#123;</div><div class="line">                    <span class="keyword">JSONObject</span> jsonObject = <span class="keyword">new</span> <span class="keyword">JSONObject</span>(args[<span class="number">0</span>].toString());</div><div class="line">                    <span class="keyword">String</span> username = jsonObject.getString(<span class="string">"username"</span>);</div><div class="line">                    <span class="keyword">String</span> message = jsonObject.getString(<span class="string">"message"</span>);</div><div class="line"></div><div class="line">                    ItemChat itemChat = <span class="keyword">new</span> ItemChat(username, message);</div><div class="line">                    mAdapter.addNewMsg(itemChat);</div><div class="line">                    mAdapter.notifyDataSetChanged();</div><div class="line">                &#125; <span class="keyword">catch</span> (JSONException e) &#123;</div><div class="line">                    e.printStackTrace();</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>Với mỗi listener được tạo ra ta phải cài đè phương thức call() tương ứng. Bởi vì hàm gọi lại (callback) này có thể được gọi từ bất kì luồng (thread) nào của chương trình nên để chắc chắn nhất ta phải để nó trong luồng chính để việc cập nhật UI không bị lỗi.</p>
+<h3><span id="emitting-events">Emitting events</span></h3>
+<p><a href="http://Socket.IO" target="_blank" rel="external">Socket.IO</a> hoạt động 2 chiều (truyền, nhận dữ liệu). Điều đó có nghĩa ta có thể vừa nhận dữ liệu từ server vừa có thể gửi thông điệp tới server bất kì lúc nào. Ở đây, sau khi kết nối thành công ta sẽ gửi một thông điệp để đăng kí với server tên, để mỗi lần gửi tin nhắn tới server có thể biết tên ta là gì. Nó giống với thủ tục check in khi vào một nơi nào đó vậy.</p>
+<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String USERNAME = <span class="string">"Android User"</span>;</div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="keyword">protected</span> <span class="function"><span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">    setContentView(R.layout.activity_main);</div><div class="line"></div><div class="line">    initViews();</div><div class="line"></div><div class="line">    mSocket.on(<span class="string">"new message"</span>, onNewMessage);</div><div class="line">    mSocket.connect();</div><div class="line"></div><div class="line">    mSocket.emit(<span class="string">"add user"</span>, USERNAME);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Câu lệnh <strong>emit(event_name, data)</strong> có tham số truyền vào là:</p>
+<ul>
+<li><strong>event_name</strong>: Tên sự kiện gửi đi (String)</li>
+<li><strong>data</strong>: Thông điệp gửi đi (có thể là một String hoặc một JSON object)</li>
+</ul>
+<p>Sau cùng, ta sẽ khởi tạo các view và thêm sự kiện gửi tin nhắn tương ứng khi người dùng nhấn nút send</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">private <span class="keyword">Button </span><span class="keyword">btnSend;</span></div><div class="line"><span class="keyword">private </span>EditText edtMsg<span class="comment">;</span></div><div class="line">private ListView lvChat<span class="comment">;</span></div><div class="line">private ChatAdapter mAdapter<span class="comment">;</span></div><div class="line"></div><div class="line">private void initViews() &#123;</div><div class="line">    lvChat = (ListView) findViewById(R.id.lv_chat)<span class="comment">;</span></div><div class="line">    <span class="keyword">btnSend </span>= (<span class="keyword">Button) </span>findViewById(R.id.<span class="keyword">btn_send);</span></div><div class="line"><span class="keyword"> </span>   edtMsg = (EditText) findViewById(R.id.edt_input)<span class="comment">;</span></div><div class="line">    mAdapter = new ChatAdapter(this)<span class="comment">;</span></div><div class="line"></div><div class="line">    lvChat.setAdapter(mAdapter)<span class="comment">;</span></div><div class="line"></div><div class="line">    <span class="keyword">btnSend.setOnClickListener(new </span>View.OnClickListener() &#123;</div><div class="line">        @Override</div><div class="line">        public void onClick(View v) &#123;</div><div class="line">            if (!edtMsg.getText().toString().isEmpty())&#123;</div><div class="line">                String msg = edtMsg.getText().toString()<span class="comment">;</span></div><div class="line">                mSocket.emit(<span class="string">"new message"</span>, msg)<span class="comment">;</span></div><div class="line">                edtMsg.setText(<span class="string">""</span>)<span class="comment">;</span></div><div class="line"></div><div class="line">                ItemChat itemChat = new ItemChat(USERNAME, msg)<span class="comment">;</span></div><div class="line">                mAdapter.<span class="keyword">addNewMsg(itemChat);</span></div><div class="line"><span class="keyword"> </span>               mAdapter.notifyDataSetChanged()<span class="comment">;</span></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;)<span class="comment">;</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>-&gt; chạy thử và xem kết quả nào :D</p>
+<p><img src="../media/socket.io-demo.png" alt="socket.io demo"></p>
+<p>Các bạn thấy đấy, với <strong><a href="http://Socket.IO" target="_blank" rel="external">Socket.IO</a></strong>, việc giao tiếp với server socket thật đơn giản phải không nào. Ta không cần bận tâm đến những câu cú phức tạp và điều khiển luồng thông tin thật rắc rối của socket - điều rất dễ xảy ra lỗi với những chương trình có nhiều sự kiện đến và đi. Việc ta làm ở đây chỉ đơn giản là <strong>kết nối -&gt; đăng kí lắng nghe sự kiện -&gt; gửi sự kiện</strong>, mọi rắc rối hãy để <a href="http://socket.IO" target="_blank" rel="external">socket.IO</a> lo :D</p>
+<p>Mã nguồn đầy đủ của project: <a href="https://github.com/minhnt58/ChatApp_Socket.io" target="_blank" rel="external">https://github.com/minhnt58/ChatApp_Socket.io</a><br>
+Bài viết có tham khảo: <a href="http://socket.io/blog/native-socket-io-and-android/" target="_blank" rel="external">http://socket.io/blog/native-socket-io-and-android/</a></p>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/su-dung-gulp-de-viet-sass-hieu-qua/" data-toggle="tooltip" data-placement="top" title="Sử dụng Gulp để viết Sass hiệu quả">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/nen-gzip-that-ba-dao/" data-toggle="tooltip" data-placement="top" title="Nén Gzip thật bá đạo">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                    <div class="comment">
+                        <div id="disqus_thread" class="disqus-thread"></div>
+                    </div>
+                
+                <!-- disqus comment end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.</span> <span class="toc-nav-text"> là gì?</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">Thư viện này gồm 2 phần:</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">2.</span> <span class="toc-nav-text"> làm gì?</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">Demo với ứng dụng Android cơ bản</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">Listening on events</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#undefined"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">Emitting events</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#nodejs" title="nodejs">nodejs</a>
+                        
+                          <a class="tag" href="/tags/#chat realtime android" title="chat realtime android">chat realtime android</a>
+                        
+                          <a class="tag" href="/tags/#socket" title="socket">socket</a>
+                        
+                          <a class="tag" href="/tags/#socket.io" title="socket.io">socket.io</a>
+                        
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<!-- disqus embedded js code start (one page only need to embed once) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "blogkxyz";
+    var disqus_identifier = "http://blogk.xyz/socket-io-la-cai-gi-voi/";
+    var disqus_url = "http://blogk.xyz/socket-io-la-cai-gi-voi/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus embedded js code start end -->
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                    <li>
+                        <a href="/feed.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/tutv95">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/tutv95">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/tutv">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://www.linkedin.com/in/tutv95">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; BlogK 2018
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://blogk.xyz/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-60224927-2';
+    var _gaDomain = 'blogk.xyz';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+
+</body>
+
+</html>
